@@ -16,7 +16,7 @@
 		832552DC2A9742E100BFE696 /* UIDevice+YHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832552DB2A9742E100BFE696 /* UIDevice+YHExtension.swift */; };
 		832552E02A97433200BFE696 /* YXDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 832552DE2A97433200BFE696 /* YXDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		832552E12A97433200BFE696 /* YXDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 832552DF2A97433200BFE696 /* YXDefine.m */; };
-		832552E32A974CD400BFE696 /* YXConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832552E22A974CD400BFE696 /* YXConfig.swift */; };
+		832552F02A975F3700BFE696 /* UIColor+YX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832552EF2A975F3700BFE696 /* UIColor+YX.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		832552DB2A9742E100BFE696 /* UIDevice+YHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+YHExtension.swift"; sourceTree = "<group>"; };
 		832552DE2A97433200BFE696 /* YXDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXDefine.h; sourceTree = "<group>"; };
 		832552DF2A97433200BFE696 /* YXDefine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXDefine.m; sourceTree = "<group>"; };
-		832552E22A974CD400BFE696 /* YXConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXConfig.swift; sourceTree = "<group>"; };
+		832552EF2A975F3700BFE696 /* UIColor+YX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+YX.swift"; sourceTree = "<group>"; };
 		E8477F51DAD81CF096BC1811 /* Pods_XYSwiftVideo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XYSwiftVideo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -106,6 +106,7 @@
 		832552D82A9742A300BFE696 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				832552EF2A975F3700BFE696 /* UIColor+YX.swift */,
 				832552DB2A9742E100BFE696 /* UIDevice+YHExtension.swift */,
 				832552D92A9742BC00BFE696 /* UIView+YHExtension.swift */,
 			);
@@ -117,7 +118,6 @@
 			children = (
 				832552DE2A97433200BFE696 /* YXDefine.h */,
 				832552DF2A97433200BFE696 /* YXDefine.m */,
-				832552E22A974CD400BFE696 /* YXConfig.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -229,11 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				832552F02A975F3700BFE696 /* UIColor+YX.swift in Sources */,
 				832552D52A9741E900BFE696 /* YXBaseViewController.swift in Sources */,
 				832552DC2A9742E100BFE696 /* UIDevice+YHExtension.swift in Sources */,
 				832552DA2A9742BC00BFE696 /* UIView+YHExtension.swift in Sources */,
 				832552D22A9740E200BFE696 /* XYSwiftVideo.swift in Sources */,
-				832552E32A974CD400BFE696 /* YXConfig.swift in Sources */,
 				832552D72A97423A00BFE696 /* YXCusNavigationBar.swift in Sources */,
 				832552E12A97433200BFE696 /* YXDefine.m in Sources */,
 			);
