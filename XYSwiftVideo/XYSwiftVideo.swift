@@ -10,5 +10,5 @@ import UIKit
 @objcMembers public class XYSwiftVideo: NSObject {
 
 
-    public config : YXConfig!
+    public var config : YXConfig!
 }

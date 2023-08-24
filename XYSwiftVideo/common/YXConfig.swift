@@ -7,6 +7,7 @@
 
 import UIKit
 
-class YXConfig: NSObject {
+@objcMembers public class YXConfig: NSObject {
+
 
 }
