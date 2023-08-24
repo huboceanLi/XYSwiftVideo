@@ -24,11 +24,11 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/admin@buzzmsg.com/XYSwiftVideo'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'admin@buzzmsg.com' => 'li437277219@gmail.com' }
-  s.source           = { :git => 'https://github.com/admin@buzzmsg.com/XYSwiftVideo.git', :tag => s.version.to_s }
+  s.author           = { 'oceanL' => 'li437277219@gmail.com' }
+  s.source           = { :git => 'https://github.com/huboceanLi/XYSwiftVideo.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
 
   s.source_files = 'XYSwiftVideo/Classes/**/*'
   

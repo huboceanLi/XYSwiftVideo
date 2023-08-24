@@ -1,0 +1,22 @@
+{
+  "name": "XYSwiftVideo",
+  "version": "0.1.0",
+  "summary": "A short description of XYSwiftVideo.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/admin@buzzmsg.com/XYSwiftVideo",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "admin@buzzmsg.com": "li437277219@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/admin@buzzmsg.com/XYSwiftVideo.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "XYSwiftVideo/Classes/**/*"
+}

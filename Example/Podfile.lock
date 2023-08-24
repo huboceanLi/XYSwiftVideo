@@ -1,0 +1,16 @@
+PODS:
+  - XYSwiftVideo (0.1.0)
+
+DEPENDENCIES:
+  - XYSwiftVideo (from `../`)
+
+EXTERNAL SOURCES:
+  XYSwiftVideo:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  XYSwiftVideo: 1c2a0ac66d99cf163f1cac20244ab069ca8f8696
+
+PODFILE CHECKSUM: 475d623399ca924ce3c50a28110f5cf9849bf4b9
+
+COCOAPODS: 1.12.1

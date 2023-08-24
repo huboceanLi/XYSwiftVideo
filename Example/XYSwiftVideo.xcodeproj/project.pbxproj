@@ -28,8 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C0E435D1EAB7AF2F9608EF9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		4CC008903A7C109327865FDA /* XYSwiftVideo.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = XYSwiftVideo.podspec; path = ../XYSwiftVideo.podspec; sourceTree = "<group>"; };
+		0C0E435D1EAB7AF2F9608EF9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		4CC008903A7C109327865FDA /* XYSwiftVideo.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XYSwiftVideo.podspec; path = ../XYSwiftVideo.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		607FACD01AFB9204008FA782 /* XYSwiftVideo_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XYSwiftVideo_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		AF944A20C92FAFFB859993DA /* Pods_XYSwiftVideo_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XYSwiftVideo_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3DA0C9C20E0DE68E99CECA4 /* Pods_XYSwiftVideo_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XYSwiftVideo_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD7FE5285F7DE975D1976EF3 /* Pods-XYSwiftVideo_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYSwiftVideo_Tests.release.xcconfig"; path = "Target Support Files/Pods-XYSwiftVideo_Tests/Pods-XYSwiftVideo_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		FEA70FF24ABDAD85A610EF27 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		FEA70FF24ABDAD85A610EF27 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,6 @@
 				9BD06DF4306EC6B08BD54A35 /* Pods-XYSwiftVideo_Tests.debug.xcconfig */,
 				FD7FE5285F7DE975D1976EF3 /* Pods-XYSwiftVideo_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
