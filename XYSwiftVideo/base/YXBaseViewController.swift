@@ -7,7 +7,7 @@
 
 import UIKit
 
-class YXBaseViewController: UIViewController {
+@objcMembers public class YXBaseViewController: UIViewController {
 
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -67,7 +67,7 @@ class YXBaseViewController: UIViewController {
         return cusNaviBar
     }()
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

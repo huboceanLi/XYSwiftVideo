@@ -25,7 +25,7 @@ private struct YHCusNavigationBarAssociatedKeys {
     static var gradientKey = "com.bbcgat.customNavigationBar.gradientLayer.key"
 }
 
-class YXCusNavigationBar: UIView {
+@objcMembers public class YXCusNavigationBar: UIView {
 
     deinit {
         print("\(NSStringFromClass(YXCusNavigationBar.classForCoder())) deinit")

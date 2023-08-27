@@ -17,4 +17,21 @@ public enum YXThemeStyle: Int {
 
     public var themeStyle : YXThemeStyle = .themeBlue
 
+    static public var shared: XYSwiftVideo!
+    
+    public static func getInstance(themeStyle: YXThemeStyle) -> XYSwiftVideo {
+        
+        if shared == nil {
+            shared = XYSwiftVideo(themeStyle: themeStyle)
+        }
+        
+        return shared
+    }
+    
+    private init(themeStyle: YXThemeStyle) {
+        self.themeStyle = themeStyle
+        
+        super.init()
+    }
+
 }
