@@ -18,6 +18,8 @@
 		832552E12A97433200BFE696 /* YXDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 832552DF2A97433200BFE696 /* YXDefine.m */; };
 		832552F02A975F3700BFE696 /* UIColor+YX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832552EF2A975F3700BFE696 /* UIColor+YX.swift */; };
 		83E6AB0C2AAEB51900ABA9EF /* HYVideoSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 83E6AB0B2AAEB51900ABA9EF /* HYVideoSDK.bundle */; };
+		83E6AB1A2AAEBBB900ABA9EF /* YXMainRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6AB192AAEBBB900ABA9EF /* YXMainRecommendView.swift */; };
+		83E6AB1C2AAEBBCA00ABA9EF /* YXMainOtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6AB1B2AAEBBCA00ABA9EF /* YXMainOtherView.swift */; };
 		9A9D555A2A9AE358001070F3 /* UIImage+YXImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D55592A9AE358001070F3 /* UIImage+YXImage.swift */; };
 		9A9D555D2A9AE45D001070F3 /* YXMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D555C2A9AE45D001070F3 /* YXMainViewController.swift */; };
 		9A9D55632A9B4B72001070F3 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D555F2A9B4B71001070F3 /* Promise.swift */; };
@@ -48,6 +50,8 @@
 		832552DF2A97433200BFE696 /* YXDefine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXDefine.m; sourceTree = "<group>"; };
 		832552EF2A975F3700BFE696 /* UIColor+YX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+YX.swift"; sourceTree = "<group>"; };
 		83E6AB0B2AAEB51900ABA9EF /* HYVideoSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HYVideoSDK.bundle; sourceTree = "<group>"; };
+		83E6AB192AAEBBB900ABA9EF /* YXMainRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXMainRecommendView.swift; sourceTree = "<group>"; };
+		83E6AB1B2AAEBBCA00ABA9EF /* YXMainOtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXMainOtherView.swift; sourceTree = "<group>"; };
 		9A9D55592A9AE358001070F3 /* UIImage+YXImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+YXImage.swift"; sourceTree = "<group>"; };
 		9A9D555C2A9AE45D001070F3 /* YXMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXMainViewController.swift; sourceTree = "<group>"; };
 		9A9D555F2A9B4B71001070F3 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
@@ -166,9 +170,35 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		83E6AB162AAEBB8B00ABA9EF /* view */ = {
+			isa = PBXGroup;
+			children = (
+				83E6AB182AAEBB9D00ABA9EF /* other */,
+				83E6AB172AAEBB9100ABA9EF /* recommend */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		83E6AB172AAEBB9100ABA9EF /* recommend */ = {
+			isa = PBXGroup;
+			children = (
+				83E6AB192AAEBBB900ABA9EF /* YXMainRecommendView.swift */,
+			);
+			path = recommend;
+			sourceTree = "<group>";
+		};
+		83E6AB182AAEBB9D00ABA9EF /* other */ = {
+			isa = PBXGroup;
+			children = (
+				83E6AB1B2AAEBBCA00ABA9EF /* YXMainOtherView.swift */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
 		9A9D555B2A9AE43B001070F3 /* vc */ = {
 			isa = PBXGroup;
 			children = (
+				83E6AB162AAEBB8B00ABA9EF /* view */,
 				9A9D555C2A9AE45D001070F3 /* YXMainViewController.swift */,
 			);
 			path = vc;
@@ -327,9 +357,11 @@
 				9A9D556B2A9B4E16001070F3 /* XYNetworkingError.swift in Sources */,
 				9A9D55752A9B51FE001070F3 /* GetDetail.swift in Sources */,
 				9A9D556E2A9B4F3E001070F3 /* CategaryList.swift in Sources */,
+				83E6AB1A2AAEBBB900ABA9EF /* YXMainRecommendView.swift in Sources */,
 				9A9D55702A9B505E001070F3 /* YXApiService.swift in Sources */,
 				9A9D555A2A9AE358001070F3 /* UIImage+YXImage.swift in Sources */,
 				832552D22A9740E200BFE696 /* XYSwiftVideo.swift in Sources */,
+				83E6AB1C2AAEBBCA00ABA9EF /* YXMainOtherView.swift in Sources */,
 				832552D72A97423A00BFE696 /* YXCusNavigationBar.swift in Sources */,
 				832552E12A97433200BFE696 /* YXDefine.m in Sources */,
 				9A9D55632A9B4B72001070F3 /* Promise.swift in Sources */,

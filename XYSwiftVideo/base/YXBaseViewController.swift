@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 @objcMembers public class YXBaseViewController: UIViewController {
 
@@ -67,6 +68,12 @@ import UIKit
         return cusNaviBar
     }()
     
+    public lazy var bgImageView: UIImageView = {
+        let bgImageView = UIImageView(frame: .zero)
+        bgImageView.image = UIImage.xy_bundleImage(name: "uk_bg_Img")
+        return bgImageView
+    }()
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -74,6 +81,12 @@ import UIKit
         view.backgroundColor = .white
         self.updateStatusBarStyle(isLight: false)
         self.view.addSubview(cusNaviBar)
+        
+        self.view.addSubview(bgImageView)
+
+        bgImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     public func updateStatusBarStyle(isLight: Bool) {

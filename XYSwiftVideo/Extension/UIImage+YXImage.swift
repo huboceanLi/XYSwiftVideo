@@ -9,11 +9,13 @@ import Foundation
 
 @objc extension UIImage {
     
-//    func xy_bundleImage(name: String) -> UIImage {
-//
-//        let url = Bundle.main.url(forResource: "HYVideoSDK", withExtension: "bundle")
-//
-//
-//
-//    }
+    static func xy_bundleImage(name: String) -> UIImage? {
+
+        if let url = Bundle.main.url(forResource: "HYVideoSDK", withExtension: "bundle"),let bundle = Bundle(url: url) {
+
+            let image = UIImage(named: name, in: bundle, compatibleWith: nil)
+            return image
+        }
+        return nil
+    }
 }
