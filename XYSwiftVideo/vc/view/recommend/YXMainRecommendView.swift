@@ -19,6 +19,8 @@ let headViewHeight = 44.0
 class YXMainRecommendView: UIView {
 
 
+    var dataDic: [String: [RecommendListResponse]] = [:]
+    
     private lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = space
@@ -54,6 +56,7 @@ class YXMainRecommendView: UIView {
         super.init(frame: frame)
         
         initializeUI()
+        getData()
     }
 
     func initializeUI() {
@@ -65,6 +68,31 @@ class YXMainRecommendView: UIView {
         }
     }
 
+    func getData() {
+        self.dataDic.removeAll()
+        
+        RecommendList.execute().then { responseObject ->Promise<Void> in
+
+            for item in responseObject {
+                
+                let tid = String(item.type_id_1)
+                
+                let keys = Array(self.dataDic.keys)
+                if keys.contains(tid) {
+                    var itemArr: [RecommendListResponse] = []
+                    if let a = self.dataDic[tid] {
+                        itemArr = a
+                    }
+                    itemArr.append(item)
+                    self.dataDic[tid] = itemArr
+                }else {
+                    self.dataDic[tid] = [item]
+                }
+            }
+            self.collectionView.reloadData()
+            return Promise<Void>.resolve()
+        }
+    }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -91,11 +119,45 @@ extension YXMainRecommendView: JXPagingViewListViewDelegate {
 extension YXMainRecommendView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 11
+        let keys = Array(self.dataDic.keys)
+
+        return keys.count
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        
+        let keys = Array(self.dataDic.keys)
+        if keys.contains("1"), section == 0 { //电影
+            if let a = self.dataDic["1"] {
+                return a.count
+            }
+            return 0
+        }
+        if keys.contains("2"), section == 1 { //电视剧
+            if let a = self.dataDic["2"] {
+                return a.count
+            }
+            return 0
+        }
+        if keys.contains("3"), section == 2 { //综艺
+            if let a = self.dataDic["3"] {
+                return a.count
+            }
+            return 0
+        }
+        if keys.contains("4"), section == 3 { //动漫
+            if let a = self.dataDic["4"] {
+                return a.count
+            }
+            return 0
+        }
+        if keys.contains("24"), section == 4 { //记录片
+            if let a = self.dataDic["24"] {
+                return a.count
+            }
+            return 0
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -115,6 +177,7 @@ extension YXMainRecommendView: UICollectionViewDelegateFlowLayout {
 
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath) as! YXMainRecommendHeadView
 
+        header.showTitle(index: indexPath.section, dic: self.dataDic)
         
         return header
     }

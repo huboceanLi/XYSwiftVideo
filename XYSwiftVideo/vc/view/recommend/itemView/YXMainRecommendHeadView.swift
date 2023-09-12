@@ -35,6 +35,32 @@ class YXMainRecommendHeadView: UICollectionReusableView {
         }
     }
 
+    func showTitle(index: Int, dic: [String: [RecommendListResponse]]) {
+        
+        let keys = Array(dic.keys)
+        if keys.contains("1"), index == 0 { //电影
+            self.name.text = "电影"
+            return
+        }
+        if keys.contains("2"), index == 1 { //电视剧
+            self.name.text = "电视剧"
+            return
+        }
+        if keys.contains("3"), index == 2 { //综艺
+            self.name.text = "综艺"
+            return
+        }
+        if keys.contains("4"), index == 3 { //动漫
+            self.name.text = "动漫"
+            return
+        }
+        if keys.contains("24"), index == 4 { //记录片
+            self.name.text = "记录片"
+            return
+        }
+        self.name.text = ""
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

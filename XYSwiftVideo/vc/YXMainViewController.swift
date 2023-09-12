@@ -15,7 +15,9 @@ extension JXPagingListContainerView: JXSegmentedViewListContainer {}
 
 @objcMembers public class YXMainViewController: YXBaseViewController  {
 
-    var titles = ["能力", "爱好", "队友"]
+    var categaryList: [CategaryListResponse] = []
+    
+    var titles: [String] = []
     let dataSource: JXSegmentedTitleDataSource = JXSegmentedTitleDataSource()
     lazy var segmentedView: JXSegmentedView = JXSegmentedView(frame: .zero)
 
@@ -81,20 +83,31 @@ extension JXPagingListContainerView: JXSegmentedViewListContainer {}
 //            make.height.equalTo(44)
 //        }
         
-        
-//        CategaryList.execute()
+        self.getData()
     }
     
+    func getData() {
+        CategaryList.execute().then { categaryList ->Promise<Void> in
+            
+            self.categaryList = categaryList
+            
+            var names: [String] = []
+            names.append("推荐")
+            
+            categaryList.map { item in
+                names.append(item.name)
+            }
+            
+            self.titles = names
+            self.dataSource.titles = self.titles
+            self.segmentedView.reloadData()
+            self.pagingView.reloadData()
+            
+            return Promise<Void>.resolve()
+            
+        }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }
 
@@ -138,7 +151,13 @@ extension YXMainViewController: JXPagingViewDelegate {
     
     public func pagingView(_ pagingView: JXPagingView, initListAtIndex index: Int) -> JXPagingViewListViewDelegate {
         
-        let view = YXMainRecommendView()
+        if index == 0 {
+            let view = YXMainRecommendView()
+            return view
+        }
+        let view = YXMainOtherView()
+        view.index = index
+        view.categeryModel = self.categaryList[index - 1]
         return view
         
     }

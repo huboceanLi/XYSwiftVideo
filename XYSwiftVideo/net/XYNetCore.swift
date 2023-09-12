@@ -47,7 +47,7 @@ class XYNetCore: NSObject {
                 }
                 
                 let code = jsonDic["code"] as? Int
-                let msg = jsonDic["msg"] as? String
+//                let msg = jsonDic["msg"] as? String
                 
                 if  code == 1 {
                     if let data = jsonDic["data"], data is NSNull {
@@ -59,8 +59,8 @@ class XYNetCore: NSObject {
                         resolve("")
                         return
                     }
-                    
-                    let jsonData = try? JSONSerialization.data(withJSONObject: data, options: .fragmentsAllowed)
+
+                    let jsonData = try? JSONSerialization.data(withJSONObject: jsonDic, options: [])
                     guard let jData = jsonData, let str = String(data: jData, encoding: .utf8) else {
                         resolve("")
                         return

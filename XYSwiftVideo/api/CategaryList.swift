@@ -6,15 +6,41 @@
 //
 
 import Foundation
+import HandyJSON
+
+struct CategaryResponse: HandyJSON {
+    
+    var code: Int = 0
+    var data: [CategaryListResponse] = []
+}
+
+struct CategaryListResponse: HandyJSON {
+    
+    var id: Int = 0
+    var name: String = ""
+    var order: [String] = []
+    var type: [CategaryListItemResponse] = []
+    var vod_year: [String] = []
+    var vod_area: [String] = []
+    var vod_lang: [String] = []
+}
+
+struct CategaryListItemResponse: HandyJSON {
+    
+    var id: Int = 0
+    var name: String = ""
+}
 
 struct CategaryList {
     
-    static func execute() -> Promise<Void> {
+    static func execute() -> Promise<[CategaryListResponse]> {
         
-        return XYNetCore.shared.apiCore(path: CategaryListPath).then { value ->Promise<Void> in
+        return XYNetCore.shared.apiCore(path: CategaryListPath).then { value ->Promise<[CategaryListResponse]> in
             
-            print("")
-            return Promise<Void>.resolve()
+            guard let resp = CategaryResponse.deserialize(from: value) else {
+                return Promise<[CategaryListResponse]>.reject(XYNetworkingError.createCommonError())
+            }
+            return Promise<[CategaryListResponse]>.resolve(resp.data)
         }
     }
 }

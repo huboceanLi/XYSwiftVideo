@@ -10,6 +10,9 @@ import JXPagingView
 
 class YXMainOtherView: UIView {
 
+    var index: Int = 0
+    var categeryModel: CategaryListResponse!
+    
     
     lazy var tableView: UITableView = UITableView(frame: CGRect.zero, style: .plain)
 
