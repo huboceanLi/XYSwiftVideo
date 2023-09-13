@@ -23,24 +23,60 @@ extension JXPagingListContainerView: JXSegmentedViewListContainer {}
 
     private lazy var pagingView: JXPagingView = {
         let view = JXPagingView(delegate: self)
-//        view.mainTableView.gestureDelegate = self
-//        view.pinSectionHeaderVerticalOffset = Int(UIDevice.YH_Nav_Height)
         view.listContainerView.scrollView.panGestureRecognizer.require(toFail: self.navigationController!.interactivePopGestureRecognizer!)
         view.mainTableView.panGestureRecognizer.require(toFail: self.navigationController!.interactivePopGestureRecognizer!)
         return view
     }()
+    
+    public lazy var settingButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage.xy_bundleImage(name: "yx_setting_img"), for: .normal)
+        button.addTarget(self, action: #selector(settingAction), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var rightItems: [Any] = {
+        var rightSpaceItem = YHCusNavigationSpaceItem()
+        rightSpaceItem.space = 10.0
+        
+        var rightAddItem = YHCusNavigationBarItem()
+        rightAddItem.width = 40.0
+        rightAddItem.view = self.settingButton
+        
+        return [rightAddItem, rightSpaceItem]
+    }()
+    
+    private lazy var searchView: YXSearchView = {
+        let view = YXSearchView(frame: .zero)
+        return view
+    }()
+    
+    @objc private func settingAction() {
+        
+    }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.cusNaviBar.hideNaviBar = false
+        self.cusNaviBar.rightItems = self.rightItems
 //        self.cusNaviBar.qmui_borderPosition = QMUIViewBorderPosition.bottom
 //        self.cusNaviBar.qmui_borderColor = .clear
 //        self.cusNaviBar.qmui_borderWidth = IMDefine.seperateLineHeight()
         self.cusNaviBar.reloadUI(origin: .zero, width: UIDevice.YH_Width)
         self.cusNaviBar.backgroundColor = .clear
         self.view.backgroundColor = UIColor.colorEFF0F3()
+        
+        
+        self.cusNaviBar.addSubview(self.searchView)
+        
+        self.searchView.snp.makeConstraints { make in
+            make.left.equalTo(self.cusNaviBar.snp_left).offset(30)
+            make.bottom.equalTo(self.cusNaviBar.snp_bottom).offset(-4)
+            make.right.equalTo(self.settingButton.snp_left).offset(-12)
+            make.height.equalTo(40)
+        }
         
         dataSource.titles = titles
         dataSource.titleSelectedColor = UIColor(red: 105/255, green: 144/255, blue: 239/255, alpha: 1)

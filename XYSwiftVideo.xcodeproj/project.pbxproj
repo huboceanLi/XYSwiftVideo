@@ -19,6 +19,8 @@
 		832552F02A975F3700BFE696 /* UIColor+YX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832552EF2A975F3700BFE696 /* UIColor+YX.swift */; };
 		839174972AB17CC300401FE5 /* YXPagePushUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839174962AB17CC300401FE5 /* YXPagePushUtil.swift */; };
 		8391749A2AB17D6C00401FE5 /* YXDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839174992AB17D6C00401FE5 /* YXDetailViewController.swift */; };
+		8391749D2AB180EC00401FE5 /* YXSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8391749C2AB180EC00401FE5 /* YXSearchViewController.swift */; };
+		839174A02AB180FA00401FE5 /* YXSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8391749F2AB180FA00401FE5 /* YXSearchView.swift */; };
 		83E6AB0C2AAEB51900ABA9EF /* HYVideoSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 83E6AB0B2AAEB51900ABA9EF /* HYVideoSDK.bundle */; };
 		83E6AB1A2AAEBBB900ABA9EF /* YXMainRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6AB192AAEBBB900ABA9EF /* YXMainRecommendView.swift */; };
 		83E6AB1C2AAEBBCA00ABA9EF /* YXMainOtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6AB1B2AAEBBCA00ABA9EF /* YXMainOtherView.swift */; };
@@ -55,6 +57,8 @@
 		832552EF2A975F3700BFE696 /* UIColor+YX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+YX.swift"; sourceTree = "<group>"; };
 		839174962AB17CC300401FE5 /* YXPagePushUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXPagePushUtil.swift; sourceTree = "<group>"; };
 		839174992AB17D6C00401FE5 /* YXDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXDetailViewController.swift; sourceTree = "<group>"; };
+		8391749C2AB180EC00401FE5 /* YXSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXSearchViewController.swift; sourceTree = "<group>"; };
+		8391749F2AB180FA00401FE5 /* YXSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXSearchView.swift; sourceTree = "<group>"; };
 		83E6AB0B2AAEB51900ABA9EF /* HYVideoSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HYVideoSDK.bundle; sourceTree = "<group>"; };
 		83E6AB192AAEBBB900ABA9EF /* YXMainRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXMainRecommendView.swift; sourceTree = "<group>"; };
 		83E6AB1B2AAEBBCA00ABA9EF /* YXMainOtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXMainOtherView.swift; sourceTree = "<group>"; };
@@ -179,6 +183,23 @@
 			path = detail;
 			sourceTree = "<group>";
 		};
+		8391749B2AB180D300401FE5 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				8391749E2AB180EF00401FE5 /* view */,
+				8391749C2AB180EC00401FE5 /* YXSearchViewController.swift */,
+			);
+			path = search;
+			sourceTree = "<group>";
+		};
+		8391749E2AB180EF00401FE5 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8391749F2AB180FA00401FE5 /* YXSearchView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		83E6AB0A2AAEB50F00ABA9EF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +246,7 @@
 		9A9D555B2A9AE43B001070F3 /* vc */ = {
 			isa = PBXGroup;
 			children = (
+				8391749B2AB180D300401FE5 /* search */,
 				839174982AB17D5A00401FE5 /* detail */,
 				83E6AB162AAEBB8B00ABA9EF /* view */,
 				9A9D555C2A9AE45D001070F3 /* YXMainViewController.swift */,
@@ -379,6 +401,7 @@
 				9A9D55732A9B51ED001070F3 /* RecommendList.swift in Sources */,
 				9A9D55692A9B4C2F001070F3 /* XYNetCore.swift in Sources */,
 				9A9D55642A9B4B72001070F3 /* Thread.swift in Sources */,
+				8391749D2AB180EC00401FE5 /* YXSearchViewController.swift in Sources */,
 				832552DC2A9742E100BFE696 /* UIDevice+YHExtension.swift in Sources */,
 				9A9D55662A9B4B72001070F3 /* Async.swift in Sources */,
 				832552DA2A9742BC00BFE696 /* UIView+YHExtension.swift in Sources */,
@@ -388,6 +411,7 @@
 				83E6AB1A2AAEBBB900ABA9EF /* YXMainRecommendView.swift in Sources */,
 				83E6AB252AAEDD4000ABA9EF /* YXMainRecommendCell.swift in Sources */,
 				9A9D55702A9B505E001070F3 /* YXApiService.swift in Sources */,
+				839174A02AB180FA00401FE5 /* YXSearchView.swift in Sources */,
 				839174972AB17CC300401FE5 /* YXPagePushUtil.swift in Sources */,
 				9A9D555A2A9AE358001070F3 /* UIImage+YXImage.swift in Sources */,
 				832552D22A9740E200BFE696 /* XYSwiftVideo.swift in Sources */,
