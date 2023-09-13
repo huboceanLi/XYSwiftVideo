@@ -22,7 +22,6 @@ class YXMainRecommendCell: UICollectionViewCell {
         let lbl: UILabel = UILabel.init(frame: .zero)
         lbl.textAlignment = .left
         lbl.font = UIFont.systemFont(ofSize: 13.0)
-        lbl.text = "Mobile"
         lbl.textColor = UIColor.color0D1324()
         return lbl
     }()
@@ -31,7 +30,6 @@ class YXMainRecommendCell: UICollectionViewCell {
         let lbl: UILabel = UILabel.init(frame: .zero)
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 10.0)
-        lbl.text = "Mobile"
         lbl.textColor = UIColor.colorFFFFFF()
         lbl.layer.backgroundColor = UIColor.color222222().withAlphaComponent(0.5).cgColor
         return lbl
@@ -40,9 +38,8 @@ class YXMainRecommendCell: UICollectionViewCell {
     lazy var scoreLab: UILabel = {
         let lbl: UILabel = UILabel.init(frame: .zero)
         lbl.textAlignment = .left
-        lbl.font = UIFont.systemFont(ofSize: 16.0)
-        lbl.text = "Mobile"
-        lbl.textColor = UIColor.colorFFFFFF()
+        lbl.font = UIFont.boldSystemFont(ofSize: 16)
+        lbl.textColor = UIColor.colorFF4500()
         return lbl
     }()
     
@@ -55,7 +52,7 @@ class YXMainRecommendCell: UICollectionViewCell {
     func initializeUI() {
         addSubview(self.headImageView)
         addSubview(self.name)
-        addSubview(self.des)
+        headImageView.addSubview(self.des)
         addSubview(self.scoreLab)
 
         self.name.snp.makeConstraints { make in

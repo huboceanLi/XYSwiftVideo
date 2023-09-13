@@ -49,6 +49,10 @@ import Foundation
         return UIColor.yx_getColor(hexColor: "FFFFFF")
     }
     
+    static func colorFF4500() -> UIColor {
+        return UIColor.yx_getColor(hexColor: "FF4500")
+    }
+    
     static func color000000() -> UIColor {
         return UIColor.yx_getColor(hexColor: "000000")
     }

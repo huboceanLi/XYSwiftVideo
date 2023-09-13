@@ -51,4 +51,17 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
     [destination dismissViewControllerAnimated:YES completion:nil];
 }
 
++ (UINavigationController *)getNavigationController {
+   UIWindow *window = [UIApplication sharedApplication].keyWindow;
+   if ([window.rootViewController isKindOfClass:[UINavigationController class]]) {
+       return (UINavigationController *)window.rootViewController;
+   } else if ([window.rootViewController isKindOfClass:[UITabBarController class]]) {
+       UIViewController *selectedVC = [((UITabBarController *)window.rootViewController)selectedViewController];
+       if ([selectedVC isKindOfClass:[UINavigationController class]]) {
+           return (UINavigationController *)selectedVC;
+       }
+   }
+   return nil;
+}
+
 @end

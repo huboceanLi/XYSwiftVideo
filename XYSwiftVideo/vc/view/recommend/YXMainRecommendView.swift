@@ -8,6 +8,7 @@
 import UIKit
 import JXPagingView
 import SnapKit
+import YYWebImage
 
 let space = 8.0
 let leftSpace = 15.0
@@ -17,7 +18,6 @@ let cellHeight = 160.0 * cellWidth / 120.0 + 6.0 + 20.0
 let headViewHeight = 44.0
 
 class YXMainRecommendView: UIView {
-
 
     var dataDic: [String: [RecommendListResponse]] = [:]
     
@@ -163,12 +163,105 @@ extension YXMainRecommendView: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(YXMainRecommendCell.classForCoder()), for: indexPath) as? YXMainRecommendCell else { return UICollectionViewCell() }
-        cell.backgroundColor = UIColor.red
+        cell.backgroundColor = UIColor.clear
+        cell.scoreLab.isHidden = true
+
+        let keys = Array(self.dataDic.keys)
+        
+        var modelArr: [RecommendListResponse] = []
+        if keys.contains("1"), indexPath.section == 0 { //电影
+            
+            if let arr = self.dataDic["1"] {
+                modelArr = arr
+            }
+        }
+        
+        if keys.contains("2"), indexPath.section == 1 {
+            
+            if let arr = self.dataDic["2"] {
+                modelArr = arr
+            }
+        }
+        
+        if keys.contains("3"), indexPath.section == 2 {
+            
+            if let arr = self.dataDic["3"] {
+                modelArr = arr
+            }
+        }
+        
+        if keys.contains("4"), indexPath.section == 3 {
+            
+            if let arr = self.dataDic["4"] {
+                modelArr = arr
+            }
+        }
+        if keys.contains("24"), indexPath.section == 4 {
+            
+            if let arr = self.dataDic["24"] {
+                modelArr = arr
+            }
+        }
+        if let item = modelArr[indexPath.row] as? RecommendListResponse {
+            cell.headImageView.yy_setImage(with: URL(string: item.vod_pic), placeholder: UIImage.xy_bundleImage(name: "uk_image_fail"))
+            cell.name.text = item.vod_name
+            cell.des.text = item.vod_remarks
+
+            if let s = Double(item.vod_douban_score) {
+                if s >= 7.0 {
+                    cell.scoreLab.isHidden = false
+                    cell.scoreLab.text =  item.vod_douban_score
+                }
+            }
+        }
+
         return cell
     }
     
-    
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let keys = Array(self.dataDic.keys)
+        
+        var modelArr: [RecommendListResponse] = []
+        if keys.contains("1"), indexPath.section == 0 { //电影
+            
+            if let arr = self.dataDic["1"] {
+                modelArr = arr
+            }
+        }
+        
+        if keys.contains("2"), indexPath.section == 1 {
+            
+            if let arr = self.dataDic["2"] {
+                modelArr = arr
+            }
+        }
+        
+        if keys.contains("3"), indexPath.section == 2 {
+            
+            if let arr = self.dataDic["3"] {
+                modelArr = arr
+            }
+        }
+        
+        if keys.contains("4"), indexPath.section == 3 {
+            
+            if let arr = self.dataDic["4"] {
+                modelArr = arr
+            }
+        }
+        if keys.contains("24"), indexPath.section == 4 {
+            
+            if let arr = self.dataDic["24"] {
+                modelArr = arr
+            }
+        }
+        
+        if let item = modelArr[indexPath.row] as? RecommendListResponse {
+            let vc = YXDetailViewController()
+            vc.videoId = item.video_id
+            YXPagePushUtil.pushToViewController(vc: vc, isAnimated: true)
+        }
+    }
 }
 
 extension YXMainRecommendView: UICollectionViewDelegateFlowLayout {

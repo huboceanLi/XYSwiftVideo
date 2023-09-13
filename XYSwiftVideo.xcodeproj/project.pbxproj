@@ -17,6 +17,8 @@
 		832552E02A97433200BFE696 /* YXDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 832552DE2A97433200BFE696 /* YXDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		832552E12A97433200BFE696 /* YXDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 832552DF2A97433200BFE696 /* YXDefine.m */; };
 		832552F02A975F3700BFE696 /* UIColor+YX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832552EF2A975F3700BFE696 /* UIColor+YX.swift */; };
+		839174972AB17CC300401FE5 /* YXPagePushUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839174962AB17CC300401FE5 /* YXPagePushUtil.swift */; };
+		8391749A2AB17D6C00401FE5 /* YXDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839174992AB17D6C00401FE5 /* YXDetailViewController.swift */; };
 		83E6AB0C2AAEB51900ABA9EF /* HYVideoSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 83E6AB0B2AAEB51900ABA9EF /* HYVideoSDK.bundle */; };
 		83E6AB1A2AAEBBB900ABA9EF /* YXMainRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6AB192AAEBBB900ABA9EF /* YXMainRecommendView.swift */; };
 		83E6AB1C2AAEBBCA00ABA9EF /* YXMainOtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6AB1B2AAEBBCA00ABA9EF /* YXMainOtherView.swift */; };
@@ -51,6 +53,8 @@
 		832552DE2A97433200BFE696 /* YXDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXDefine.h; sourceTree = "<group>"; };
 		832552DF2A97433200BFE696 /* YXDefine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXDefine.m; sourceTree = "<group>"; };
 		832552EF2A975F3700BFE696 /* UIColor+YX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+YX.swift"; sourceTree = "<group>"; };
+		839174962AB17CC300401FE5 /* YXPagePushUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXPagePushUtil.swift; sourceTree = "<group>"; };
+		839174992AB17D6C00401FE5 /* YXDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXDetailViewController.swift; sourceTree = "<group>"; };
 		83E6AB0B2AAEB51900ABA9EF /* HYVideoSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HYVideoSDK.bundle; sourceTree = "<group>"; };
 		83E6AB192AAEBBB900ABA9EF /* YXMainRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXMainRecommendView.swift; sourceTree = "<group>"; };
 		83E6AB1B2AAEBBCA00ABA9EF /* YXMainOtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXMainOtherView.swift; sourceTree = "<group>"; };
@@ -162,8 +166,17 @@
 			children = (
 				832552DE2A97433200BFE696 /* YXDefine.h */,
 				832552DF2A97433200BFE696 /* YXDefine.m */,
+				839174962AB17CC300401FE5 /* YXPagePushUtil.swift */,
 			);
 			path = common;
+			sourceTree = "<group>";
+		};
+		839174982AB17D5A00401FE5 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				839174992AB17D6C00401FE5 /* YXDetailViewController.swift */,
+			);
+			path = detail;
 			sourceTree = "<group>";
 		};
 		83E6AB0A2AAEB50F00ABA9EF /* Resources */ = {
@@ -212,6 +225,7 @@
 		9A9D555B2A9AE43B001070F3 /* vc */ = {
 			isa = PBXGroup;
 			children = (
+				839174982AB17D5A00401FE5 /* detail */,
 				83E6AB162AAEBB8B00ABA9EF /* view */,
 				9A9D555C2A9AE45D001070F3 /* YXMainViewController.swift */,
 			);
@@ -374,6 +388,7 @@
 				83E6AB1A2AAEBBB900ABA9EF /* YXMainRecommendView.swift in Sources */,
 				83E6AB252AAEDD4000ABA9EF /* YXMainRecommendCell.swift in Sources */,
 				9A9D55702A9B505E001070F3 /* YXApiService.swift in Sources */,
+				839174972AB17CC300401FE5 /* YXPagePushUtil.swift in Sources */,
 				9A9D555A2A9AE358001070F3 /* UIImage+YXImage.swift in Sources */,
 				832552D22A9740E200BFE696 /* XYSwiftVideo.swift in Sources */,
 				83E6AB1C2AAEBBCA00ABA9EF /* YXMainOtherView.swift in Sources */,
@@ -383,6 +398,7 @@
 				83E6AB232AAEDD2300ABA9EF /* YXMainRecommendHeadView.swift in Sources */,
 				9A9D55772A9B520C001070F3 /* GetList.swift in Sources */,
 				9A9D55792A9B521D001070F3 /* SearchMovies.swift in Sources */,
+				8391749A2AB17D6C00401FE5 /* YXDetailViewController.swift in Sources */,
 				9A9D555D2A9AE45D001070F3 /* YXMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

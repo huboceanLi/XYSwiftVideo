@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)isPhoneX;
 + (void)popWithSender:(UINavigationController *)sender;
 + (void)dismissWhithDestination:(UIViewController *)destination;
++ (UINavigationController *)getNavigationController;
 
 @end
 

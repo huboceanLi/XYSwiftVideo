@@ -12,7 +12,7 @@ target 'XYSwiftVideo' do
   pod 'JXPagingView', '2.1.2'
   pod "SnapKit", '5.6.0'
   pod 'JXSegmentedView', '~> 1.2.7'
-
+  pod 'YYWebImage'
 
 
   post_install do |pi|

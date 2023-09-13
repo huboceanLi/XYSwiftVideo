@@ -22,6 +22,9 @@ import SnapKit
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.isHidden = true
+        
         self.view.bringSubviewToFront(self.cusNaviBar)
     }
     /// The default back button in the navigation bar
