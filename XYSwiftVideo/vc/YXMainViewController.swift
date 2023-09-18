@@ -71,7 +71,7 @@ extension JXPagingListContainerView: JXSegmentedViewListContainer {}
         self.defaultNaviBackButton.isHidden = true
 //        self.cusNaviBar.qmui_borderPosition = QMUIViewBorderPosition.bottom
 //        self.cusNaviBar.qmui_borderColor = .clear
-//        self.cusNaviBar.qmui_borderWidth = IMDefine.seperateLineHeight()
+//        self.cusNaviBar.qmui_borderWidth = IMDefine.seperateLineHeight() 1
         self.cusNaviBar.reloadUI(origin: .zero, width: UIDevice.YH_Width)
         self.cusNaviBar.backgroundColor = .clear
         self.view.backgroundColor = UIColor.colorFFFFFF()
