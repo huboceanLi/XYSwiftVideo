@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import YYWebImage
 
 class YXSearchCell: UITableViewCell {
 
@@ -66,6 +67,12 @@ class YXSearchCell: UITableViewCell {
         }
     }
 
+    func getModel(model: RecommendListResponse) {
+        self.headImageView.yy_setImage(with: URL(string: model.vod_pic), placeholder: UIImage.xy_bundleImage(name: "uk_image_fail"))
+        self.name.text = model.vod_name
+        
+    }
+    
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

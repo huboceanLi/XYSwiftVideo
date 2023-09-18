@@ -1,5 +1,5 @@
 //
-//  YXMainRecommendHeadView.swift
+//  YXMainHeadView.swift
 //  XYSwiftVideo
 //
 //  Created by oceanMAC on 2023/9/11.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class YXMainRecommendHeadView: UICollectionReusableView {
+class YXMainHeadView: UICollectionReusableView {
 
     
     lazy var name: UILabel = {

@@ -21,7 +21,7 @@ class XYNetCore: NSObject {
     }
     
     public func apiCore(path: String,
-                        method: HTTPMethod = .post,
+                        method: HTTPMethod = .get,
                         parameters: [String : Any]? = nil) -> Promise<String> {
         
         let promiss = Promise<String> {[weak self] (resolve, reject) in
@@ -47,7 +47,7 @@ class XYNetCore: NSObject {
                 }
                 
                 let code = jsonDic["code"] as? Int
-//                let msg = jsonDic["msg"] as? String
+                let msg = jsonDic["msg"] as? String
                 
                 if  code == 1 {
                     if let data = jsonDic["data"], data is NSNull {
@@ -69,7 +69,7 @@ class XYNetCore: NSObject {
                     resolve(str)
                     return
                 } else {
-                    let error = XYNetworkingError(netError:YXNetError.NO_NETWORKING)
+                    let error = XYNetworkingError(code: code ?? 0, desc: msg ?? "Get Net Work error!")
                     reject(error)
                     return
                 }

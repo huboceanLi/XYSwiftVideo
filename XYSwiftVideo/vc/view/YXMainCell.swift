@@ -1,5 +1,5 @@
 //
-//  YXMainRecommendCell.swift
+//  YXMainCell.swift
 //  XYSwiftVideo
 //
 //  Created by oceanMAC on 2023/9/11.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class YXMainRecommendCell: UICollectionViewCell {
+class YXMainCell: UICollectionViewCell {
     
     lazy var headImageView: UIImageView = {
         let headImageView: UIImageView = UIImageView.init(frame: .zero)

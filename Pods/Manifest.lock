@@ -1,12 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
   - HandyJSON (5.0.2)
-  - JXPagingView (2.1.2):
-    - JXPagingView/Pager (= 2.1.2)
-    - JXPagingView/Paging (= 2.1.2)
-  - JXPagingView/Pager (2.1.2)
-  - JXPagingView/Paging (2.1.2)
-  - JXSegmentedView (1.2.7)
   - QMUIKit (4.5.1):
     - QMUIKit/QMUIComponents (= 4.5.1)
     - QMUIKit/QMUICore (= 4.5.1)
@@ -321,8 +315,6 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 4.9.1)
   - HandyJSON (~> 5.0.2)
-  - JXPagingView (= 2.1.2)
-  - JXSegmentedView (~> 1.2.7)
   - QMUIKit (= 4.5.1)
   - SnapKit (= 5.6.0)
   - WCDB.swift (= 1.1.0)
@@ -332,8 +324,6 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - HandyJSON
-    - JXPagingView
-    - JXSegmentedView
     - QMUIKit
     - SnapKit
     - SQLiteRepairKit
@@ -346,8 +336,6 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
-  JXPagingView: 90924b364a2ff7e94db534fad1fa50925ff69ee4
-  JXSegmentedView: eb1cad21f57c2543c00c3e08b8fd3c7ca54f5acd
   QMUIKit: 3e717c45730ecdf5011ca76751990ad1a23ba7e1
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SQLiteRepairKit: a66145aadae91886c800f75e16f5cc6476af1a93
@@ -357,6 +345,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 9f23b705e46f08db015198d2959080cb28974fc8
+PODFILE CHECKSUM: a081398f74cf87aafa739c5d9bbfba93b1eff869
 
 COCOAPODS: 1.12.1

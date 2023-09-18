@@ -11,6 +11,8 @@ import QMUIKit
 
 class YXSearchViewController: YXBaseViewController {
 
+    var dataSource: [RecommendListResponse] = []
+    
     private lazy var searchView: YXSearchView = {
         let view = YXSearchView(frame: .zero)
         view.name.delegate = self
@@ -99,6 +101,15 @@ class YXSearchViewController: YXBaseViewController {
     
     @objc private func searchAction() {
         
+        guard let keywords = self.searchView.name.text else { return }
+
+        SearchMovies.execute(keywords: keywords, page: 0).then { list ->Promise<Void> in
+            
+            self.dataSource.append(contentsOf: list)
+            self.tableView.reloadData()
+            
+            return Promise<Void>.resolve()
+        }
     }
     
     @objc private func textFieldInputChange(notification: NSNotification) {
@@ -139,18 +150,24 @@ extension YXSearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! YXSearchCell
 
+        cell.getModel(model: self.dataSource[indexPath.row])
+        
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 2
+        return self.dataSource.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        let model = self.dataSource[indexPath.row]
+        let vc = YXDetailViewController()
+        vc.videoId = model.id
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

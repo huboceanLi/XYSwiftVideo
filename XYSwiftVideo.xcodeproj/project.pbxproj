@@ -22,11 +22,10 @@
 		8391749D2AB180EC00401FE5 /* YXSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8391749C2AB180EC00401FE5 /* YXSearchViewController.swift */; };
 		839174A02AB180FA00401FE5 /* YXSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8391749F2AB180FA00401FE5 /* YXSearchView.swift */; };
 		839C854E2AB8208D006A54DF /* YXSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C854D2AB8208D006A54DF /* YXSearchCell.swift */; };
+		839C85532AB82C41006A54DF /* YXMainHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C85512AB82C41006A54DF /* YXMainHeadView.swift */; };
+		839C85542AB82C41006A54DF /* YXMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C85522AB82C41006A54DF /* YXMainCell.swift */; };
+		839C85562AB82CA5006A54DF /* YXMainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C85552AB82CA5006A54DF /* YXMainContentView.swift */; };
 		83E6AB0C2AAEB51900ABA9EF /* HYVideoSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 83E6AB0B2AAEB51900ABA9EF /* HYVideoSDK.bundle */; };
-		83E6AB1A2AAEBBB900ABA9EF /* YXMainRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6AB192AAEBBB900ABA9EF /* YXMainRecommendView.swift */; };
-		83E6AB1C2AAEBBCA00ABA9EF /* YXMainOtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6AB1B2AAEBBCA00ABA9EF /* YXMainOtherView.swift */; };
-		83E6AB232AAEDD2300ABA9EF /* YXMainRecommendHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6AB222AAEDD2300ABA9EF /* YXMainRecommendHeadView.swift */; };
-		83E6AB252AAEDD4000ABA9EF /* YXMainRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6AB242AAEDD4000ABA9EF /* YXMainRecommendCell.swift */; };
 		9A9D555A2A9AE358001070F3 /* UIImage+YXImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D55592A9AE358001070F3 /* UIImage+YXImage.swift */; };
 		9A9D555D2A9AE45D001070F3 /* YXMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D555C2A9AE45D001070F3 /* YXMainViewController.swift */; };
 		9A9D55632A9B4B72001070F3 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D555F2A9B4B71001070F3 /* Promise.swift */; };
@@ -35,11 +34,9 @@
 		9A9D55662A9B4B72001070F3 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D55622A9B4B71001070F3 /* Async.swift */; };
 		9A9D55692A9B4C2F001070F3 /* XYNetCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D55682A9B4C2F001070F3 /* XYNetCore.swift */; };
 		9A9D556B2A9B4E16001070F3 /* XYNetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D556A2A9B4E16001070F3 /* XYNetworkingError.swift */; };
-		9A9D556E2A9B4F3E001070F3 /* CategaryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D556D2A9B4F3E001070F3 /* CategaryList.swift */; };
 		9A9D55702A9B505E001070F3 /* YXApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D556F2A9B505E001070F3 /* YXApiService.swift */; };
 		9A9D55732A9B51ED001070F3 /* RecommendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D55722A9B51ED001070F3 /* RecommendList.swift */; };
 		9A9D55752A9B51FE001070F3 /* GetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D55742A9B51FE001070F3 /* GetDetail.swift */; };
-		9A9D55772A9B520C001070F3 /* GetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D55762A9B520C001070F3 /* GetList.swift */; };
 		9A9D55792A9B521D001070F3 /* SearchMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D55782A9B521D001070F3 /* SearchMovies.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,11 +58,10 @@
 		8391749C2AB180EC00401FE5 /* YXSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXSearchViewController.swift; sourceTree = "<group>"; };
 		8391749F2AB180FA00401FE5 /* YXSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXSearchView.swift; sourceTree = "<group>"; };
 		839C854D2AB8208D006A54DF /* YXSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXSearchCell.swift; sourceTree = "<group>"; };
+		839C85512AB82C41006A54DF /* YXMainHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXMainHeadView.swift; sourceTree = "<group>"; };
+		839C85522AB82C41006A54DF /* YXMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXMainCell.swift; sourceTree = "<group>"; };
+		839C85552AB82CA5006A54DF /* YXMainContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXMainContentView.swift; sourceTree = "<group>"; };
 		83E6AB0B2AAEB51900ABA9EF /* HYVideoSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HYVideoSDK.bundle; sourceTree = "<group>"; };
-		83E6AB192AAEBBB900ABA9EF /* YXMainRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXMainRecommendView.swift; sourceTree = "<group>"; };
-		83E6AB1B2AAEBBCA00ABA9EF /* YXMainOtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXMainOtherView.swift; sourceTree = "<group>"; };
-		83E6AB222AAEDD2300ABA9EF /* YXMainRecommendHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXMainRecommendHeadView.swift; sourceTree = "<group>"; };
-		83E6AB242AAEDD4000ABA9EF /* YXMainRecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXMainRecommendCell.swift; sourceTree = "<group>"; };
 		9A9D55592A9AE358001070F3 /* UIImage+YXImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+YXImage.swift"; sourceTree = "<group>"; };
 		9A9D555C2A9AE45D001070F3 /* YXMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXMainViewController.swift; sourceTree = "<group>"; };
 		9A9D555F2A9B4B71001070F3 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
@@ -74,11 +70,9 @@
 		9A9D55622A9B4B71001070F3 /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		9A9D55682A9B4C2F001070F3 /* XYNetCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYNetCore.swift; sourceTree = "<group>"; };
 		9A9D556A2A9B4E16001070F3 /* XYNetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYNetworkingError.swift; sourceTree = "<group>"; };
-		9A9D556D2A9B4F3E001070F3 /* CategaryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategaryList.swift; sourceTree = "<group>"; };
 		9A9D556F2A9B505E001070F3 /* YXApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXApiService.swift; sourceTree = "<group>"; };
 		9A9D55722A9B51ED001070F3 /* RecommendList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendList.swift; sourceTree = "<group>"; };
 		9A9D55742A9B51FE001070F3 /* GetDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDetail.swift; sourceTree = "<group>"; };
-		9A9D55762A9B520C001070F3 /* GetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetList.swift; sourceTree = "<group>"; };
 		9A9D55782A9B521D001070F3 /* SearchMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovies.swift; sourceTree = "<group>"; };
 		E8477F51DAD81CF096BC1811 /* Pods_XYSwiftVideo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XYSwiftVideo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -214,36 +208,11 @@
 		83E6AB162AAEBB8B00ABA9EF /* view */ = {
 			isa = PBXGroup;
 			children = (
-				83E6AB182AAEBB9D00ABA9EF /* other */,
-				83E6AB172AAEBB9100ABA9EF /* recommend */,
+				839C85552AB82CA5006A54DF /* YXMainContentView.swift */,
+				839C85522AB82C41006A54DF /* YXMainCell.swift */,
+				839C85512AB82C41006A54DF /* YXMainHeadView.swift */,
 			);
 			path = view;
-			sourceTree = "<group>";
-		};
-		83E6AB172AAEBB9100ABA9EF /* recommend */ = {
-			isa = PBXGroup;
-			children = (
-				83E6AB212AAEDB0200ABA9EF /* itemView */,
-				83E6AB192AAEBBB900ABA9EF /* YXMainRecommendView.swift */,
-			);
-			path = recommend;
-			sourceTree = "<group>";
-		};
-		83E6AB182AAEBB9D00ABA9EF /* other */ = {
-			isa = PBXGroup;
-			children = (
-				83E6AB1B2AAEBBCA00ABA9EF /* YXMainOtherView.swift */,
-			);
-			path = other;
-			sourceTree = "<group>";
-		};
-		83E6AB212AAEDB0200ABA9EF /* itemView */ = {
-			isa = PBXGroup;
-			children = (
-				83E6AB222AAEDD2300ABA9EF /* YXMainRecommendHeadView.swift */,
-				83E6AB242AAEDD4000ABA9EF /* YXMainRecommendCell.swift */,
-			);
-			path = itemView;
 			sourceTree = "<group>";
 		};
 		9A9D555B2A9AE43B001070F3 /* vc */ = {
@@ -281,10 +250,8 @@
 		9A9D556C2A9B4EF3001070F3 /* api */ = {
 			isa = PBXGroup;
 			children = (
-				9A9D556D2A9B4F3E001070F3 /* CategaryList.swift */,
 				9A9D55722A9B51ED001070F3 /* RecommendList.swift */,
 				9A9D55742A9B51FE001070F3 /* GetDetail.swift */,
-				9A9D55762A9B520C001070F3 /* GetList.swift */,
 				9A9D55782A9B521D001070F3 /* SearchMovies.swift */,
 			);
 			path = api;
@@ -408,23 +375,20 @@
 				839C854E2AB8208D006A54DF /* YXSearchCell.swift in Sources */,
 				832552DC2A9742E100BFE696 /* UIDevice+YHExtension.swift in Sources */,
 				9A9D55662A9B4B72001070F3 /* Async.swift in Sources */,
+				839C85542AB82C41006A54DF /* YXMainCell.swift in Sources */,
 				832552DA2A9742BC00BFE696 /* UIView+YHExtension.swift in Sources */,
+				839C85562AB82CA5006A54DF /* YXMainContentView.swift in Sources */,
 				9A9D556B2A9B4E16001070F3 /* XYNetworkingError.swift in Sources */,
 				9A9D55752A9B51FE001070F3 /* GetDetail.swift in Sources */,
-				9A9D556E2A9B4F3E001070F3 /* CategaryList.swift in Sources */,
-				83E6AB1A2AAEBBB900ABA9EF /* YXMainRecommendView.swift in Sources */,
-				83E6AB252AAEDD4000ABA9EF /* YXMainRecommendCell.swift in Sources */,
 				9A9D55702A9B505E001070F3 /* YXApiService.swift in Sources */,
 				839174A02AB180FA00401FE5 /* YXSearchView.swift in Sources */,
 				839174972AB17CC300401FE5 /* YXPagePushUtil.swift in Sources */,
 				9A9D555A2A9AE358001070F3 /* UIImage+YXImage.swift in Sources */,
+				839C85532AB82C41006A54DF /* YXMainHeadView.swift in Sources */,
 				832552D22A9740E200BFE696 /* XYSwiftVideo.swift in Sources */,
-				83E6AB1C2AAEBBCA00ABA9EF /* YXMainOtherView.swift in Sources */,
 				832552D72A97423A00BFE696 /* YXCusNavigationBar.swift in Sources */,
 				832552E12A97433200BFE696 /* YXDefine.m in Sources */,
 				9A9D55632A9B4B72001070F3 /* Promise.swift in Sources */,
-				83E6AB232AAEDD2300ABA9EF /* YXMainRecommendHeadView.swift in Sources */,
-				9A9D55772A9B520C001070F3 /* GetList.swift in Sources */,
 				9A9D55792A9B521D001070F3 /* SearchMovies.swift in Sources */,
 				8391749A2AB17D6C00401FE5 /* YXDetailViewController.swift in Sources */,
 				9A9D555D2A9AE45D001070F3 /* YXMainViewController.swift in Sources */,

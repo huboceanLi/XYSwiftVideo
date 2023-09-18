@@ -1,12 +1,11 @@
 //
-//  YXMainRecommendView.swift
+//  YXMainContentView.swift
 //  XYSwiftVideo
 //
 //  Created by oceanMAC on 2023/9/11.
 //
 
 import UIKit
-import JXPagingView
 import SnapKit
 import YYWebImage
 
@@ -17,7 +16,7 @@ let cellWidth = (UIDevice.YH_Width - leftSpace * 2 - space * 2) / Double(count) 
 let cellHeight = 160.0 * cellWidth / 120.0 + 6.0 + 20.0
 let headViewHeight = 44.0
 
-class YXMainRecommendView: UIView {
+class YXMainContentView: UIView {
 
     var dataDic: [String: [RecommendListResponse]] = [:]
     
@@ -37,12 +36,8 @@ class YXMainRecommendView: UIView {
         collectionView.backgroundColor = UIColor.clear
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        collectionView.register(YXMainRecommendCell.classForCoder(), forCellWithReuseIdentifier: NSStringFromClass(YXMainRecommendCell.classForCoder()))
-        
-        collectionView.register(YXMainRecommendHeadView.classForCoder(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView")
-
-        
+        collectionView.register(YXMainCell.classForCoder(), forCellWithReuseIdentifier: NSStringFromClass(YXMainCell.classForCoder()))
+        collectionView.register(YXMainHeadView.classForCoder(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView")
         collectionView.alwaysBounceHorizontal = false
         collectionView.alwaysBounceVertical = false
         collectionView.showsHorizontalScrollIndicator = false
@@ -50,7 +45,6 @@ class YXMainRecommendView: UIView {
         return collectionView
     }()
     
-    var listViewDidScrollCallback: ((UIScrollView) -> ())?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -99,24 +93,7 @@ class YXMainRecommendView: UIView {
     
 }
 
-extension YXMainRecommendView: JXPagingViewListViewDelegate {
-
-    func listView() -> UIView { self }
-
-    
-    func listViewDidScrollCallback(callback: @escaping (UIScrollView) -> ()) {
-        listViewDidScrollCallback = callback
-    }
-    
-    
-    func listScrollView() -> UIScrollView { collectionView }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        listViewDidScrollCallback?(scrollView)
-    }
-}
-
-extension YXMainRecommendView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension YXMainContentView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         let keys = Array(self.dataDic.keys)
@@ -162,7 +139,7 @@ extension YXMainRecommendView: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(YXMainRecommendCell.classForCoder()), for: indexPath) as? YXMainRecommendCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(YXMainCell.classForCoder()), for: indexPath) as? YXMainCell else { return UICollectionViewCell() }
         cell.backgroundColor = UIColor.clear
         cell.scoreLab.isHidden = true
 
@@ -264,11 +241,11 @@ extension YXMainRecommendView: UICollectionViewDelegate, UICollectionViewDataSou
     }
 }
 
-extension YXMainRecommendView: UICollectionViewDelegateFlowLayout {
+extension YXMainContentView: UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath) as! YXMainRecommendHeadView
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath) as! YXMainHeadView
 
         header.showTitle(index: indexPath.section, dic: self.dataDic)
         

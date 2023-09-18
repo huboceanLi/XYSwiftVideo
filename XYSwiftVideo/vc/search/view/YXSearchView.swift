@@ -34,6 +34,7 @@ class YXSearchView: UIView {
         name.textColor = UIColor.color0D1324().withAlphaComponent(0.4)
         name.font = UIFont.systemFont(ofSize: 14)
         name.returnKeyType = .search
+        name.text = "暗战"
         return name
     }()
     

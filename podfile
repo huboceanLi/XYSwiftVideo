@@ -9,9 +9,9 @@ target 'XYSwiftVideo' do
   pod 'QMUIKit', '4.5.1'
   pod 'Alamofire', '4.9.1'
   pod 'HandyJSON', '~> 5.0.2'
-  pod 'JXPagingView', '2.1.2'
+  #pod 'JXPagingView', '2.1.2'
   pod "SnapKit", '5.6.0'
-  pod 'JXSegmentedView', '~> 1.2.7'
+  #pod 'JXSegmentedView', '~> 1.2.7'
   pod 'YYWebImage'
 
 

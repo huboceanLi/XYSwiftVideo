@@ -7,6 +7,6 @@
 
 let Service_URL = "http://vod.wxspb.cn/api/movies"
 
-let CategaryListPath = Service_URL + "/get_type"
 let home_recommend = Service_URL + "/recommend"
+let home_search = Service_URL + "/search_movies"
 
