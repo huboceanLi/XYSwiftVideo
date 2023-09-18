@@ -37,8 +37,10 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
     }
     else {
         [sender.viewControllers enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [sender popToViewController:obj animated:animated];
-            *stop = YES;
+            if (sender.viewControllers.count - 1 > idx) {
+                [sender popToViewController:obj animated:animated];
+                *stop = YES;
+            }
         }];
     }
 }

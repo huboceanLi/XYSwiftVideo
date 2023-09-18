@@ -30,7 +30,7 @@ import SnapKit
     /// The default back button in the navigation bar
     public lazy var defaultNaviBackButton: UIButton = {
         let defaultNaviBackButton = UIButton(type: .custom)
-        defaultNaviBackButton.setImage(UIImage.init(named: "bc_navi_black_back"), for: .normal)
+        defaultNaviBackButton.setImage(UIImage.xy_bundleImage(name: "uk_back"), for: .normal)
         defaultNaviBackButton.titleLabel?.adjustsFontSizeToFitWidth = true
         defaultNaviBackButton.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
         return defaultNaviBackButton
@@ -73,7 +73,7 @@ import SnapKit
     
     public lazy var bgImageView: UIImageView = {
         let bgImageView = UIImageView(frame: .zero)
-        bgImageView.image = UIImage.xy_bundleImage(name: "uk_bg_Img")
+        bgImageView.image = UIImage.xy_bundleImage(name: "bg")
         return bgImageView
     }()
     
@@ -88,7 +88,8 @@ import SnapKit
         self.view.addSubview(bgImageView)
 
         bgImageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.left.right.top.equalToSuperview()
+            make.height.equalTo(UIDevice.YH_Width)
         }
     }
     

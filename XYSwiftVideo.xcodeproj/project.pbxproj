@@ -21,6 +21,7 @@
 		8391749A2AB17D6C00401FE5 /* YXDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839174992AB17D6C00401FE5 /* YXDetailViewController.swift */; };
 		8391749D2AB180EC00401FE5 /* YXSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8391749C2AB180EC00401FE5 /* YXSearchViewController.swift */; };
 		839174A02AB180FA00401FE5 /* YXSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8391749F2AB180FA00401FE5 /* YXSearchView.swift */; };
+		839C854E2AB8208D006A54DF /* YXSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C854D2AB8208D006A54DF /* YXSearchCell.swift */; };
 		83E6AB0C2AAEB51900ABA9EF /* HYVideoSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 83E6AB0B2AAEB51900ABA9EF /* HYVideoSDK.bundle */; };
 		83E6AB1A2AAEBBB900ABA9EF /* YXMainRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6AB192AAEBBB900ABA9EF /* YXMainRecommendView.swift */; };
 		83E6AB1C2AAEBBCA00ABA9EF /* YXMainOtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6AB1B2AAEBBCA00ABA9EF /* YXMainOtherView.swift */; };
@@ -59,6 +60,7 @@
 		839174992AB17D6C00401FE5 /* YXDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXDetailViewController.swift; sourceTree = "<group>"; };
 		8391749C2AB180EC00401FE5 /* YXSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXSearchViewController.swift; sourceTree = "<group>"; };
 		8391749F2AB180FA00401FE5 /* YXSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXSearchView.swift; sourceTree = "<group>"; };
+		839C854D2AB8208D006A54DF /* YXSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXSearchCell.swift; sourceTree = "<group>"; };
 		83E6AB0B2AAEB51900ABA9EF /* HYVideoSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HYVideoSDK.bundle; sourceTree = "<group>"; };
 		83E6AB192AAEBBB900ABA9EF /* YXMainRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXMainRecommendView.swift; sourceTree = "<group>"; };
 		83E6AB1B2AAEBBCA00ABA9EF /* YXMainOtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXMainOtherView.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				8391749F2AB180FA00401FE5 /* YXSearchView.swift */,
+				839C854D2AB8208D006A54DF /* YXSearchCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				9A9D55692A9B4C2F001070F3 /* XYNetCore.swift in Sources */,
 				9A9D55642A9B4B72001070F3 /* Thread.swift in Sources */,
 				8391749D2AB180EC00401FE5 /* YXSearchViewController.swift in Sources */,
+				839C854E2AB8208D006A54DF /* YXSearchCell.swift in Sources */,
 				832552DC2A9742E100BFE696 /* UIDevice+YHExtension.swift in Sources */,
 				9A9D55662A9B4B72001070F3 /* Async.swift in Sources */,
 				832552DA2A9742BC00BFE696 /* UIView+YHExtension.swift in Sources */,

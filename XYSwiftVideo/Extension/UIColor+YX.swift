@@ -40,65 +40,31 @@ import Foundation
     }
     
     
-    //
-    static func colorA2A8C3() -> UIColor {
-        return UIColor.yx_getColor(hexColor: "A2A8C3")
-    }
     
-    static func colorFFFFFF() -> UIColor {
-        return UIColor.yx_getColor(hexColor: "FFFFFF")
+    //文字颜色
+    //深灰色-非标题
+    static func color8F9BAF() -> UIColor {
+        return UIColor.yx_getColor(hexColor: "8F9BAF")
     }
-    
-    static func colorFF4500() -> UIColor {
-        return UIColor.yx_getColor(hexColor: "FF4500")
-    }
-    
-    static func color000000() -> UIColor {
-        return UIColor.yx_getColor(hexColor: "000000")
-    }
-    
-    static func color00C6DB() -> UIColor {
-        return UIColor.yx_getColor(hexColor: "00C6DB")
-    }
-    
-    static func colorDADCE7() -> UIColor {
-        return UIColor.yx_getColor(hexColor: "DADCE7")
-    }
-    
+    //黑色
     static func color0D1324() -> UIColor {
         return UIColor.yx_getColor(hexColor: "0D1324")
     }
     
-    static func colorFF4A4A() -> UIColor {
-        return UIColor.yx_getColor(hexColor: "FF4A4A")
+    //主题颜色
+    static func color4F80FF() -> UIColor {
+        return UIColor.yx_getColor(hexColor: "4F80FF")
     }
     
-    static func color222222() -> UIColor {
-        return UIColor.yx_getColor(hexColor: "222222")
+    //背景色
+    static func colorFFFFFF() -> UIColor {
+        return UIColor.yx_getColor(hexColor: "FFFFFF")
     }
-    
-    static func colorEFF0F3() -> UIColor {
-        return UIColor.yx_getColor(hexColor: "EFF0F3")
+
+    //评分--红色
+    static func colorFF4500() -> UIColor {
+        return UIColor.yx_getColor(hexColor: "FF4500")
     }
-    
-    static func colorF3F5F9() -> UIColor {
-        return UIColor.yx_getColor(hexColor: "F3F5F9")
-    }
-    
-    static func colorBEBEC0() -> UIColor {
-        return UIColor.yx_getColor(hexColor: "BEBEC0")
-    }
-    
-    static func color333333() -> UIColor {
-        return UIColor.yx_getColor(hexColor: "333333")
-    }
-    
-    static func color0BCADE() -> UIColor {
-        return UIColor.yx_getColor(hexColor: "0BCADE")
-    }
-    
-    static func colorDADCE2() -> UIColor {
-        return UIColor.yx_getColor(hexColor: "DADCE2")
-    }
+
 }
 

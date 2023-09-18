@@ -31,7 +31,7 @@ class YXMainRecommendCell: UICollectionViewCell {
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 10.0)
         lbl.textColor = UIColor.colorFFFFFF()
-        lbl.layer.backgroundColor = UIColor.color222222().withAlphaComponent(0.5).cgColor
+        lbl.layer.backgroundColor = UIColor.color0D1324().withAlphaComponent(0.5).cgColor
         return lbl
     }()
     

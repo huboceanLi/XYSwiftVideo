@@ -48,6 +48,13 @@ extension JXPagingListContainerView: JXSegmentedViewListContainer {}
     
     private lazy var searchView: YXSearchView = {
         let view = YXSearchView(frame: .zero)
+        view.name.isEnabled = false
+        view.handleSearchCallback = { [weak self] in
+            guard let self = self else { return }
+            let vc = YXSearchViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
         return view
     }()
     
@@ -61,12 +68,13 @@ extension JXPagingListContainerView: JXSegmentedViewListContainer {}
         // Do any additional setup after loading the view.
         self.cusNaviBar.hideNaviBar = false
         self.cusNaviBar.rightItems = self.rightItems
+        self.defaultNaviBackButton.isHidden = true
 //        self.cusNaviBar.qmui_borderPosition = QMUIViewBorderPosition.bottom
 //        self.cusNaviBar.qmui_borderColor = .clear
 //        self.cusNaviBar.qmui_borderWidth = IMDefine.seperateLineHeight()
         self.cusNaviBar.reloadUI(origin: .zero, width: UIDevice.YH_Width)
         self.cusNaviBar.backgroundColor = .clear
-        self.view.backgroundColor = UIColor.colorEFF0F3()
+        self.view.backgroundColor = UIColor.colorFFFFFF()
         
         
         self.cusNaviBar.addSubview(self.searchView)

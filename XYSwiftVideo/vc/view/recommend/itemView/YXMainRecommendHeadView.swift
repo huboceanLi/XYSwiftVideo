@@ -10,6 +10,7 @@ import SnapKit
 
 class YXMainRecommendHeadView: UICollectionReusableView {
 
+    
     lazy var name: UILabel = {
         let lbl: UILabel = UILabel.init(frame: .zero)
         lbl.textAlignment = .left
