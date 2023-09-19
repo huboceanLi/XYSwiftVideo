@@ -46,7 +46,8 @@ import SnapKit
     }()
     
     @objc private func settingAction() {
-        
+        let vc = YXHistoryViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     public override func viewDidLoad() {

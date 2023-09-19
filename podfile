@@ -5,7 +5,7 @@ target 'XYSwiftVideo' do
   use_frameworks!
 
 
-  pod 'WCDB.swift', '1.1.0'
+  #pod 'WCDB.swift', '1.1.0'
   pod 'QMUIKit', '4.5.1'
   pod 'Alamofire', '4.9.1'
   pod 'HandyJSON', '~> 5.0.2'

@@ -14,7 +14,7 @@ class YXSearchCell: UITableViewCell {
     lazy var headImageView: UIImageView = {
         let headImageView: UIImageView = UIImageView.init(frame: .zero)
         headImageView.layer.cornerRadius = 6.0
-        headImageView.backgroundColor = UIColor.red
+        headImageView.backgroundColor = UIColor.clear
         headImageView.layer.masksToBounds = true
         headImageView.contentMode = .scaleAspectFill
         return headImageView
@@ -24,7 +24,6 @@ class YXSearchCell: UITableViewCell {
         let lbl: UILabel = UILabel.init(frame: .zero)
         lbl.font = UIFont.boldSystemFont(ofSize: 16)
         lbl.textColor = UIColor.color0D1324()
-        lbl.text = "阿斯顿发"
         return lbl
     }()
     
@@ -33,7 +32,6 @@ class YXSearchCell: UITableViewCell {
         lbl.font = UIFont.systemFont(ofSize: 12.0)
         lbl.textColor = UIColor.color8F9BAF()
         lbl.numberOfLines = 3
-        lbl.text = "2023北京文化论坛9月14、15日在京举行。论坛聚焦文化创新发展，文明交流互鉴。国家主席习近平给论坛发来贺信，指出：北京历史悠久，文脉绵长，是中华文明连续性、创新性、统一性、包容性、和平性的有力见证。"
         return lbl
     }()
     
@@ -71,6 +69,29 @@ class YXSearchCell: UITableViewCell {
         self.headImageView.yy_setImage(with: URL(string: model.vod_pic), placeholder: UIImage.xy_bundleImage(name: "uk_image_fail"))
         self.name.text = model.vod_name
         
+        var str = ""
+        if model.type_id_1 == 1 {
+            str = "电影";
+        }else if model.type_id_1 == 2 {
+            str = "电视剧";
+        }else if model.type_id_1 == 3 {
+            str = "综艺";
+        }else if model.type_id_1 == 4 {
+            str = "动漫";
+        }else if model.type_id_1 == 24 {
+            str = "记录片";
+        }else {
+            str = "其他";
+        }
+        var c = model.vod_year + "/" + str + "/" + model.vod_area
+        
+        var content = model.vod_content
+        content = content.replacingOccurrences(of: "<p>", with: "")
+        content = content.replacingOccurrences(of: "</p>", with: "")
+        if c.count > 0 {
+            c = c + "/" + model.vod_content
+        }
+        self.des.text = c
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
