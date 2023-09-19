@@ -14,10 +14,31 @@ class YXDetailViewController: YXBaseViewController {
 
     var videoId: Int = 0
         
-
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView(frame: .zero)
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+        return scrollView
+    }()
     
     private lazy var playVideoView: YXPlayVideoView = {
         let view = YXPlayVideoView(frame: .zero)
+        return view
+    }()
+    
+    
+    private lazy var briefView: YXBriefView = {
+        let view = YXBriefView(frame: .zero)
+        return view
+    }()
+    
+    private lazy var gatherView: YXGatherView = {
+        let view = YXGatherView(frame: .zero)
+        return view
+    }()
+    
+    private lazy var contentView: YXDetailContentView = {
+        let view = YXDetailContentView(frame: .zero)
         return view
     }()
     
@@ -41,6 +62,31 @@ class YXDetailViewController: YXBaseViewController {
             make.height.equalTo(playViewHeight)
         }
         
+        self.view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
+            make.left.bottom.equalToSuperview()
+            make.width.equalTo(UIDevice.YH_Width)
+            make.top.equalTo(self.playVideoView.snp_bottom).offset(0)
+        }
+        
+        self.scrollView.addSubview(briefView)
+        briefView.snp.makeConstraints { make in
+            make.left.right.top.equalToSuperview()
+        }
+        
+        self.scrollView.addSubview(gatherView)
+        gatherView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(self.briefView.snp_bottom).offset(0)
+            make.height.equalTo(80)
+        }
+        
+        self.scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(self.gatherView.snp_bottom).offset(0)
+            make.bottom.equalTo(self.scrollView.snp_bottom).offset(-15)
+        }
     }
     /*
     // MARK: - Navigation
