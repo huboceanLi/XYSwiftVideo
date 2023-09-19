@@ -14,6 +14,8 @@ class YXDetailViewController: YXBaseViewController {
 
     var videoId: Int = 0
         
+    var detailListResponse: DetailListResponse?
+    
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: .zero)
         scrollView.showsVerticalScrollIndicator = false
@@ -47,6 +49,8 @@ class YXDetailViewController: YXBaseViewController {
 
         // Do any additional setup after loading the view.
         setUpUI()
+        
+        getData()
     }
     
     func setUpUI() {
@@ -86,6 +90,17 @@ class YXDetailViewController: YXBaseViewController {
             make.left.right.equalToSuperview()
             make.top.equalTo(self.gatherView.snp_bottom).offset(0)
             make.bottom.equalTo(self.scrollView.snp_bottom).offset(-15)
+        }
+    }
+    
+    func getData() {
+        GetDetail.execute(videoId: String(self.videoId)).then { response -> Promise<Void> in
+            self.detailListResponse = response
+            
+            self.briefView.getModel(model: self.detailListResponse)
+            self.contentView.getModel(model: self.detailListResponse)
+
+            return Promise<Void>.resolve()
         }
     }
     /*
