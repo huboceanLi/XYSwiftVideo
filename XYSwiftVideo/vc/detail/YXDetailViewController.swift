@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import AVFoundation
+import AVKit
 
 let playViewHeight = 220.0 * UIDevice.YH_Width / 390.0
 
@@ -44,6 +46,9 @@ class YXDetailViewController: YXBaseViewController {
         return view
     }()
     
+    var player: AVPlayer!
+    var playerLayer: AVPlayerLayer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -75,27 +80,77 @@ class YXDetailViewController: YXBaseViewController {
         
         self.scrollView.addSubview(briefView)
         briefView.snp.makeConstraints { make in
-            make.left.right.top.equalToSuperview()
+            make.left.top.equalToSuperview()
+            make.width.equalTo(UIDevice.YH_Width)
         }
         
         self.scrollView.addSubview(gatherView)
         gatherView.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
+            make.left.equalToSuperview()
+            make.width.equalTo(UIDevice.YH_Width)
             make.top.equalTo(self.briefView.snp_bottom).offset(0)
-            make.height.equalTo(80)
+            make.height.equalTo(180)
         }
         
         self.scrollView.addSubview(contentView)
         contentView.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
+            make.left.equalToSuperview()
+            make.width.equalTo(UIDevice.YH_Width)
             make.top.equalTo(self.gatherView.snp_bottom).offset(0)
             make.bottom.equalTo(self.scrollView.snp_bottom).offset(-15)
         }
+        
+        // 创建 AVPlayer
+//               guard let url = URL(string: "https://ukzyvod3.ukubf5.com/20230728/gX3uVgyX/index.m3u8") else {
+//                   return
+//               }
+//               player = AVPlayer(url: url)
+//
+//               // 创建 AVPlayerLayer 并添加到视图中
+//               playerLayer = AVPlayerLayer(player: player)
+//        playerLayer.frame = CGRect(x: 0, y: 0, width: UIDevice.YH_Width, height: playViewHeight)
+//        playVideoView.layer.addSublayer(playerLayer)
+//
+//               // 播放视频
+//               player.play()
     }
     
     func getData() {
         GetDetail.execute(videoId: String(self.videoId)).then { response -> Promise<Void> in
             self.detailListResponse = response
+            
+            var vodPlayUrls: [DetailVideoItemResponse] = []
+            
+            
+            
+            
+            if response.vod_play_url.count > 10 {
+                for index in 0..<response.vod_play_url.count {
+                    if index < 9 {
+                        vodPlayUrls.append(response.vod_play_url[index])
+                    }
+                }
+                self.gatherView.getModel(models: vodPlayUrls, isMore: true)
+                self.gatherView.snp.updateConstraints { make in
+                    make.height.equalTo(40.0 + 48.0 * 2.0 - 8.0)
+                }
+            }else {
+                vodPlayUrls = response.vod_play_url
+                self.gatherView.getModel(models: vodPlayUrls, isMore: false)
+                
+                if response.vod_play_url.count < 5 {
+                    self.gatherView.snp.updateConstraints { make in
+                        make.height.equalTo(40.0 + 40.0)
+                    }
+                }else {
+                    self.gatherView.snp.updateConstraints { make in
+                        make.height.equalTo(40.0 + 48.0 * 2.0 - 8.0)
+                    }
+                }
+
+            }
+            
+
             
             self.briefView.getModel(model: self.detailListResponse)
             self.contentView.getModel(model: self.detailListResponse)

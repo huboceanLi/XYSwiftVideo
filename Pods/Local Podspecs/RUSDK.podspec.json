@@ -1,0 +1,22 @@
+{
+  "name": "RUSDK",
+  "version": "0.1.0",
+  "summary": "A short description of RUSDK.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/li437277219@gmail.com/RUSDK",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "li437277219@gmail.com": "li437277219@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/li437277219@gmail.com/RUSDK.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "RUSDK/Classes/**/*"
+}

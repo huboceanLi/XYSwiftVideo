@@ -14,6 +14,7 @@ target 'XYSwiftVideo' do
   #pod 'JXSegmentedView', '~> 1.2.7'
   pod 'YYWebImage'
 
+  pod 'RUSDK',:git =>"https://gitee.com/yjlhy/RUSDK.git"
 
   post_install do |pi|
     pi.pods_project.targets.each do |t|

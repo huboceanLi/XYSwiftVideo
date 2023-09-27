@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		340AE8FB72C759C086144D69 /* Pods_XYSwiftVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8477F51DAD81CF096BC1811 /* Pods_XYSwiftVideo.framework */; };
+		831EE3EC2AC424CE00CBE277 /* YXGatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831EE3EB2AC424CE00CBE277 /* YXGatherCell.swift */; };
 		832552CB2A97366700BFE696 /* XYSwiftVideo.h in Headers */ = {isa = PBXBuildFile; fileRef = 832552CA2A97366700BFE696 /* XYSwiftVideo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		832552D22A9740E200BFE696 /* XYSwiftVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832552D12A9740E200BFE696 /* XYSwiftVideo.swift */; };
 		832552D52A9741E900BFE696 /* YXBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832552D42A9741E900BFE696 /* YXBaseViewController.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		11E44C2D8AE63739802006CA /* Pods-XYSwiftVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYSwiftVideo.release.xcconfig"; path = "Target Support Files/Pods-XYSwiftVideo/Pods-XYSwiftVideo.release.xcconfig"; sourceTree = "<group>"; };
 		376AF7998835CC95B4D6ED04 /* Pods-XYSwiftVideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYSwiftVideo.debug.xcconfig"; path = "Target Support Files/Pods-XYSwiftVideo/Pods-XYSwiftVideo.debug.xcconfig"; sourceTree = "<group>"; };
+		831EE3EB2AC424CE00CBE277 /* YXGatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXGatherCell.swift; sourceTree = "<group>"; };
 		832552C72A97366700BFE696 /* XYSwiftVideo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XYSwiftVideo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		832552CA2A97366700BFE696 /* XYSwiftVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYSwiftVideo.h; sourceTree = "<group>"; };
 		832552D12A9740E200BFE696 /* XYSwiftVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYSwiftVideo.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				839C85602AB9519A006A54DF /* YXPlayVideoView.swift */,
 				839C85622AB9527C006A54DF /* YXBriefView.swift */,
 				839C85642AB95490006A54DF /* YXGatherView.swift */,
+				831EE3EB2AC424CE00CBE277 /* YXGatherCell.swift */,
 				839C85662AB954A6006A54DF /* YXDetailContentView.swift */,
 			);
 			path = view;
@@ -422,6 +425,7 @@
 				832552D22A9740E200BFE696 /* XYSwiftVideo.swift in Sources */,
 				832552D72A97423A00BFE696 /* YXCusNavigationBar.swift in Sources */,
 				839C855E2AB9504C006A54DF /* YXHistoryViewController.swift in Sources */,
+				831EE3EC2AC424CE00CBE277 /* YXGatherCell.swift in Sources */,
 				832552E12A97433200BFE696 /* YXDefine.m in Sources */,
 				9A9D55632A9B4B72001070F3 /* Promise.swift in Sources */,
 				9A9D55792A9B521D001070F3 /* SearchMovies.swift in Sources */,
