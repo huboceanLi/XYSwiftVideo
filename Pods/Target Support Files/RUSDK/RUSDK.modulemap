@@ -1,6 +1,0 @@
-framework module RUSDK {
-  umbrella header "RUSDK-umbrella.h"
-
-  export *
-  module * { export * }
-}

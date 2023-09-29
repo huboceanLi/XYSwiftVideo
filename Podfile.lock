@@ -1,6 +1,10 @@
 PODS:
   - Alamofire (4.9.1)
   - HandyJSON (5.0.2)
+  - HYVideoPlay (0.1.1):
+    - Masonry (= 1.1.0)
+    - YYModel
+  - Masonry (1.1.0)
   - QMUIKit (4.5.1):
     - QMUIKit/QMUIComponents (= 4.5.1)
     - QMUIKit/QMUICore (= 4.5.1)
@@ -297,12 +301,12 @@ PODS:
     - QMUIKit/QMUILog
   - QMUIKit/QMUIResources (4.5.1)
   - QMUIKit/QMUIWeakObjectContainer (4.5.1)
-  - RUSDK (0.1.0)
   - SnapKit (5.6.0)
   - YYCache (1.0.4)
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
   - YYImage/Core (1.0.4)
+  - YYModel (1.0.4)
   - YYWebImage (1.0.5):
     - YYCache
     - YYImage
@@ -310,8 +314,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 4.9.1)
   - HandyJSON (~> 5.0.2)
+  - HYVideoPlay
   - QMUIKit (= 4.5.1)
-  - RUSDK (from `https://gitee.com/yjlhy/RUSDK.git`)
   - SnapKit (= 5.6.0)
   - YYWebImage
 
@@ -319,31 +323,27 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - HandyJSON
+    - HYVideoPlay
+    - Masonry
     - QMUIKit
     - SnapKit
     - YYCache
     - YYImage
+    - YYModel
     - YYWebImage
-
-EXTERNAL SOURCES:
-  RUSDK:
-    :git: https://gitee.com/yjlhy/RUSDK.git
-
-CHECKOUT OPTIONS:
-  RUSDK:
-    :commit: 3a6650b40b23ba5f535fcf33aeb3e6099a3b2188
-    :git: https://gitee.com/yjlhy/RUSDK.git
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  HYVideoPlay: 0160606a69e03f9ec196126a9fe1572cb759cd35
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   QMUIKit: 3e717c45730ecdf5011ca76751990ad1a23ba7e1
-  RUSDK: 4a17424d6c6dfe7c9d04fddb9536107f40503e87
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 5dd21048b512cc7210d856806423c9e0a753c062
+PODFILE CHECKSUM: 7acef8d0dc3d50af5e7087e9914359c9b6596ecb
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.11.3

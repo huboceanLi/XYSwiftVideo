@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import AVFoundation
 import AVKit
+import HYMedia
 
 let playViewHeight = 220.0 * UIDevice.YH_Width / 390.0
 
@@ -25,8 +26,8 @@ class YXDetailViewController: YXBaseViewController {
         return scrollView
     }()
     
-    private lazy var playVideoView: YXPlayVideoView = {
-        let view = YXPlayVideoView(frame: .zero)
+    private lazy var playVideoView: HYVideoPlayView = {
+        let view = HYVideoPlayView(frame: .zero)
         return view
     }()
     
