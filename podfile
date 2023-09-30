@@ -13,7 +13,9 @@ target 'XYSwiftVideo' do
   pod "SnapKit", '5.6.0'
   #pod 'JXSegmentedView', '~> 1.2.7'
   pod 'YYWebImage'
-  pod 'HYVideoPlay'
+#  pod 'HYVideoPlay'
+  pod "Masonry", '~> 1.1.0'
+  pod "YYModel"
 
   #pod 'RUSDK',:git =>"https://gitee.com/yjlhy/RUSDK.git"
 
