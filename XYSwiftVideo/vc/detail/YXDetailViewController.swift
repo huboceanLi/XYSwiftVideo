@@ -66,6 +66,7 @@ class YXDetailViewController: YXBaseViewController {
         self.view.backgroundColor = UIColor.colorFFFFFF()
         
         self.view.addSubview(playVideoView)
+        playVideoView.startPlayUrl("", startPosition: 0)
 //        playVideoView.snp.makeConstraints { make in
 //            make.left.right.equalToSuperview()
 //            make.top.equalTo(self.cusNaviBar.snp_bottom).offset(0)
