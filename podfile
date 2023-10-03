@@ -1,4 +1,4 @@
-source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://github.com/CocoaPods/Specs.git'
 #source https://cdn.cocoapods.org/
 platform :ios, '12.0'
 target 'XYSwiftVideo' do
@@ -13,17 +13,17 @@ target 'XYSwiftVideo' do
   pod "SnapKit", '5.6.0'
   #pod 'JXSegmentedView', '~> 1.2.7'
   pod 'YYWebImage'
-#  pod 'HYVideoPlay'
   pod "Masonry", '~> 1.1.0'
   pod "YYModel"
+  pod 'HYVideoPlay', '~> 0.1.2'
 
   #pod 'RUSDK',:git =>"https://gitee.com/yjlhy/RUSDK.git"
 
-  post_install do |pi|
-    pi.pods_project.targets.each do |t|
-      t.build_configurations.each do |config|
-        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
-      end
-    end
-  end
+#  post_install do |pi|
+#    pi.pods_project.targets.each do |t|
+#      t.build_configurations.each do |config|
+#        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+#      end
+#    end
+#  end
 end

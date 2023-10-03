@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import AVFoundation
 import AVKit
-//import HYMedia
+import HYMedia
 
 let playViewHeight = 220.0 * UIDevice.YH_Width / 390.0
 
@@ -26,8 +26,8 @@ class YXDetailViewController: YXBaseViewController {
         return scrollView
     }()
     
-    private lazy var playVideoView: YXPlayVideoView = {
-        let view = YXPlayVideoView(frame: .zero)
+    private lazy var playVideoView: HYVideoPlayView = {
+        let view = HYVideoPlayView(frame: CGRectMake(0, 88, UIDevice.YH_Width, playViewHeight))
         return view
     }()
     
@@ -66,11 +66,11 @@ class YXDetailViewController: YXBaseViewController {
         self.view.backgroundColor = UIColor.colorFFFFFF()
         
         self.view.addSubview(playVideoView)
-        playVideoView.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
-            make.top.equalTo(self.cusNaviBar.snp_bottom).offset(0)
-            make.height.equalTo(playViewHeight)
-        }
+//        playVideoView.snp.makeConstraints { make in
+//            make.left.right.equalToSuperview()
+//            make.top.equalTo(self.cusNaviBar.snp_bottom).offset(0)
+//            make.height.equalTo(playViewHeight)
+//        }
         
         self.view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in

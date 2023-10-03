@@ -1,5 +1,5 @@
 //
-//  YXMainContentViewController.swift
+//  YXMainViewController.swift
 //  XYSwiftVideo
 //
 //  Created by Ocean 李 on 2023/8/27.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-@objcMembers public class YXMainContentViewController: YXBaseViewController  {
+@objcMembers public class YXMainViewController: YXBaseViewController  {
 
     private lazy var contentView: YXMainContentView = {
         let view = YXMainContentView(frame: .zero)

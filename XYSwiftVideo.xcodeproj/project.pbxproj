@@ -32,12 +32,11 @@
 		839C85652AB95490006A54DF /* YXGatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C85642AB95490006A54DF /* YXGatherView.swift */; };
 		839C85672AB954A6006A54DF /* YXDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C85662AB954A6006A54DF /* YXDetailContentView.swift */; };
 		83E6AB0C2AAEB51900ABA9EF /* HYVideoSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 83E6AB0B2AAEB51900ABA9EF /* HYVideoSDK.bundle */; };
-		9A0AE9122AC7A3C500ACCAE1 /* HYVideoPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0AE9112AC7A3B300ACCAE1 /* HYVideoPlayer.framework */; };
 		9A9D555A2A9AE358001070F3 /* UIImage+YXImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D55592A9AE358001070F3 /* UIImage+YXImage.swift */; };
 		9A9D555D2A9AE45D001070F3 /* YXMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D555C2A9AE45D001070F3 /* YXMainViewController.swift */; };
 		9A9D55632A9B4B72001070F3 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D555F2A9B4B71001070F3 /* Promise.swift */; };
 		9A9D55642A9B4B72001070F3 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D55602A9B4B71001070F3 /* Thread.swift */; };
-		9A9D55652A9B4B72001070F3 /* Promise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A9D55612A9B4B71001070F3 /* Promise.h */; };
+		9A9D55652A9B4B72001070F3 /* Promise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A9D55612A9B4B71001070F3 /* Promise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A9D55662A9B4B72001070F3 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D55622A9B4B71001070F3 /* Async.swift */; };
 		9A9D55692A9B4C2F001070F3 /* XYNetCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D55682A9B4C2F001070F3 /* XYNetCore.swift */; };
 		9A9D556B2A9B4E16001070F3 /* XYNetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D556A2A9B4E16001070F3 /* XYNetworkingError.swift */; };
@@ -46,16 +45,6 @@
 		9A9D55752A9B51FE001070F3 /* GetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D55742A9B51FE001070F3 /* GetDetail.swift */; };
 		9A9D55792A9B521D001070F3 /* SearchMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D55782A9B521D001070F3 /* SearchMovies.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		9A0AE9102AC7A3B300ACCAE1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A0AE90C2AC7A3B200ACCAE1 /* HYVideoPlayer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9AC2DD182AC5B4CD00EC7F29;
-			remoteInfo = HYVideoPlayer;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		11E44C2D8AE63739802006CA /* Pods-XYSwiftVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYSwiftVideo.release.xcconfig"; path = "Target Support Files/Pods-XYSwiftVideo/Pods-XYSwiftVideo.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,7 +74,6 @@
 		839C85642AB95490006A54DF /* YXGatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXGatherView.swift; sourceTree = "<group>"; };
 		839C85662AB954A6006A54DF /* YXDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXDetailContentView.swift; sourceTree = "<group>"; };
 		83E6AB0B2AAEB51900ABA9EF /* HYVideoSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HYVideoSDK.bundle; sourceTree = "<group>"; };
-		9A0AE90C2AC7A3B200ACCAE1 /* HYVideoPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HYVideoPlayer.xcodeproj; path = ../../HYVideoPlayer/HYVideoPlayer/HYVideoPlayer.xcodeproj; sourceTree = "<group>"; };
 		9A9D55592A9AE358001070F3 /* UIImage+YXImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+YXImage.swift"; sourceTree = "<group>"; };
 		9A9D555C2A9AE45D001070F3 /* YXMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXMainViewController.swift; sourceTree = "<group>"; };
 		9A9D555F2A9B4B71001070F3 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
@@ -106,7 +94,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A0AE9122AC7A3C500ACCAE1 /* HYVideoPlayer.framework in Frameworks */,
 				340AE8FB72C759C086144D69 /* Pods_XYSwiftVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,7 +121,6 @@
 		832552BD2A97366700BFE696 = {
 			isa = PBXGroup;
 			children = (
-				9A0AE90C2AC7A3B200ACCAE1 /* HYVideoPlayer.xcodeproj */,
 				832552C92A97366700BFE696 /* XYSwiftVideo */,
 				832552C82A97366700BFE696 /* Products */,
 				74D0CB99AD8819876D0830D7 /* Pods */,
@@ -262,14 +248,6 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		9A0AE90D2AC7A3B200ACCAE1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9A0AE9112AC7A3B300ACCAE1 /* HYVideoPlayer.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		9A9D555B2A9AE43B001070F3 /* vc */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +316,7 @@
 				832552C32A97366700BFE696 /* Sources */,
 				832552C42A97366700BFE696 /* Frameworks */,
 				832552C52A97366700BFE696 /* Resources */,
+				31A75129CB5FA04E4835E3C5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -374,28 +353,12 @@
 			mainGroup = 832552BD2A97366700BFE696;
 			productRefGroup = 832552C82A97366700BFE696 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 9A0AE90D2AC7A3B200ACCAE1 /* Products */;
-					ProjectRef = 9A0AE90C2AC7A3B200ACCAE1 /* HYVideoPlayer.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				832552C62A97366700BFE696 /* XYSwiftVideo */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		9A0AE9112AC7A3B300ACCAE1 /* HYVideoPlayer.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = HYVideoPlayer.framework;
-			remoteRef = 9A0AE9102AC7A3B300ACCAE1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		832552C52A97366700BFE696 /* Resources */ = {
@@ -409,6 +372,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		31A75129CB5FA04E4835E3C5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XYSwiftVideo/Pods-XYSwiftVideo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XYSwiftVideo/Pods-XYSwiftVideo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XYSwiftVideo/Pods-XYSwiftVideo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B8B60606980D53FAF112FA0E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

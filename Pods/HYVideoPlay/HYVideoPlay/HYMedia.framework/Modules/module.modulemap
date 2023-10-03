@@ -1,0 +1,6 @@
+framework module HYMedia {
+  umbrella header "HYMedia.h"
+
+  export *
+  module * { export * }
+}
