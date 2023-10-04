@@ -37,6 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)startPlay;
 
+- (NSTimeInterval)getDuration;
+
 
 @end
 

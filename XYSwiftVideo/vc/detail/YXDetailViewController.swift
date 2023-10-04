@@ -16,8 +16,10 @@ let playViewHeight = 220.0 * UIDevice.YH_Width / 390.0
 class YXDetailViewController: YXBaseViewController {
 
     var videoId: Int = 0
-        
+    var currentTime: Int = 0
     var detailListResponse: DetailListResponse?
+    
+    var currentResponse: DetailVideoItemResponse?
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: .zero)
@@ -27,7 +29,8 @@ class YXDetailViewController: YXBaseViewController {
     }()
     
     private lazy var playVideoView: HYVideoPlayView = {
-        let view = HYVideoPlayView(frame: CGRectMake(0, 88, UIDevice.YH_Width, playViewHeight))
+        let view = HYVideoPlayView(frame: .zero)
+        view.delegate = self
         return view
     }()
     
@@ -47,6 +50,10 @@ class YXDetailViewController: YXBaseViewController {
         return view
     }()
     
+    deinit {
+        self.playVideoView.remove()
+    }
+    
     var player: AVPlayer!
     var playerLayer: AVPlayerLayer!
     
@@ -57,6 +64,14 @@ class YXDetailViewController: YXBaseViewController {
         setUpUI()
         
         getData()
+        
+        gatherView.clickChangeVideoBack = { [weak self] model in
+            guard let self = self else {return}
+            
+            self.currentResponse = model
+            self.defaultNaviTitleLabel.text = (self.detailListResponse?.vod_name ?? "") + "-" + (self.currentResponse?.name ?? "")
+            self.playVideoView.startPlayUrl(self.currentResponse?.url ?? "", startPosition: 0)
+        }
     }
     
     func setUpUI() {
@@ -66,12 +81,11 @@ class YXDetailViewController: YXBaseViewController {
         self.view.backgroundColor = UIColor.colorFFFFFF()
         
         self.view.addSubview(playVideoView)
-        playVideoView.startPlayUrl("", startPosition: 0)
-//        playVideoView.snp.makeConstraints { make in
-//            make.left.right.equalToSuperview()
-//            make.top.equalTo(self.cusNaviBar.snp_bottom).offset(0)
-//            make.height.equalTo(playViewHeight)
-//        }
+        playVideoView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(self.cusNaviBar.snp_bottom).offset(0)
+            make.height.equalTo(playViewHeight)
+        }
         
         self.view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
@@ -101,73 +115,89 @@ class YXDetailViewController: YXBaseViewController {
             make.top.equalTo(self.gatherView.snp_bottom).offset(0)
             make.bottom.equalTo(self.scrollView.snp_bottom).offset(-15)
         }
-        
-        // 创建 AVPlayer
-//               guard let url = URL(string: "https://ukzyvod3.ukubf5.com/20230728/gX3uVgyX/index.m3u8") else {
-//                   return
-//               }
-//               player = AVPlayer(url: url)
-//
-//               // 创建 AVPlayerLayer 并添加到视图中
-//               playerLayer = AVPlayerLayer(player: player)
-//        playerLayer.frame = CGRect(x: 0, y: 0, width: UIDevice.YH_Width, height: playViewHeight)
-//        playVideoView.layer.addSublayer(playerLayer)
-//
-//               // 播放视频
-//               player.play()
     }
     
     func getData() {
         GetDetail.execute(videoId: String(self.videoId)).then { response -> Promise<Void> in
             self.detailListResponse = response
             
-            var vodPlayUrls: [DetailVideoItemResponse] = []
+            let index = response.vod_play_url.count / 6
             
-            
-            
-            
-            if response.vod_play_url.count > 10 {
-                for index in 0..<response.vod_play_url.count {
-                    if index < 9 {
-                        vodPlayUrls.append(response.vod_play_url[index])
-                    }
-                }
-                self.gatherView.getModel(models: vodPlayUrls, isMore: true)
+            if index == 0 {
                 self.gatherView.snp.updateConstraints { make in
-                    make.height.equalTo(40.0 + 48.0 * 2.0 - 8.0)
+                    make.height.equalTo(40.0 + 48.0 - 8.0)
                 }
             }else {
-                vodPlayUrls = response.vod_play_url
-                self.gatherView.getModel(models: vodPlayUrls, isMore: false)
-                
-                if response.vod_play_url.count < 5 {
-                    self.gatherView.snp.updateConstraints { make in
-                        make.height.equalTo(40.0 + 40.0)
-                    }
-                }else {
-                    self.gatherView.snp.updateConstraints { make in
-                        make.height.equalTo(40.0 + 48.0 * 2.0 - 8.0)
-                    }
+                self.gatherView.snp.updateConstraints { make in
+                    make.height.equalTo(40.0 + 48.0 * Float64(index + 1) - 8.0)
                 }
-
             }
-            
 
-            
             self.briefView.getModel(model: self.detailListResponse)
             self.contentView.getModel(model: self.detailListResponse)
 
+            if let allKeys = YXDefine.getHistoryAllkeys() as? [String] {
+                if allKeys.contains(String(self.videoId)) {
+                    
+                    let hisArray = YXDefine.getHistory()
+                    
+                    for item in hisArray {
+                        if item.tvId == self.videoId {
+                            var r = DetailVideoItemResponse()
+                            r.name = item.playName
+                            r.url = item.playUrl
+                            self.currentResponse = r
+
+                            self.playVideoView.startPlayUrl(self.currentResponse?.url ?? "", startPosition: TimeInterval(item.playDuration))
+
+                            break
+                        }
+                    }
+
+                }else {
+                    //播放第一集
+                    self.currentResponse = self.detailListResponse?.vod_play_url.first
+                    self.playVideoView.startPlayUrl(self.currentResponse?.url ?? "", startPosition: 0)
+                }
+            }else {
+                //播放第一集
+                self.currentResponse = self.detailListResponse?.vod_play_url.first
+                self.playVideoView.startPlayUrl(self.currentResponse?.url ?? "", startPosition: 0)
+            }
+
+            self.gatherView.getModel(models: response.vod_play_url, currentModel: self.currentResponse)
+
+            self.defaultNaviTitleLabel.text = (self.detailListResponse?.vod_name ?? "") + "-" + (self.currentResponse?.name ?? "")
+            
             return Promise<Void>.resolve()
         }
     }
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension YXDetailViewController: HYVideoPlayViewDelegate {
+    
+    func currentTime(_ currentTime: Int) {
+        self.currentTime = currentTime
     }
-    */
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        let cd = Int(self.playVideoView.currentPosition - 5)
+        
+        if cd > 10 {
+            let model = YXHistoryRecordModel()
+            model.tvId = self.videoId
+            model.name = self.detailListResponse?.vod_name ?? ""
+            model.playUrl = self.currentResponse?.url ?? ""
+            model.imageUrl = self.detailListResponse?.vod_pic ?? ""
+            model.duration = Int(self.playVideoView.getDuration())
+            model.playDuration = Int(self.playVideoView.currentPosition - 5)
+            model.playName = self.currentResponse?.name ?? ""
+            YXDefine.savePlay(model)
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CHANGEVIDEOHISTORY"), object: nil, userInfo: nil)
+        }
 
+    }
 }

@@ -18,7 +18,7 @@ class YXSearchViewController: YXBaseViewController {
         view.name.delegate = self
         view.handleSearchCallback = { [weak self] in
             guard let self = self else { return }
-
+            self.searchAction()
         }
         return view
     }()
@@ -44,6 +44,7 @@ class YXSearchViewController: YXBaseViewController {
         tableView.clipsToBounds = true
         tableView.separatorStyle = .none
         tableView.register(YXSearchCell.classForCoder(), forCellReuseIdentifier: "cell")
+        tableView.updateEmpty(withImageName: "uk_nodata", title: "暂无数据")
         return tableView
     }()
     
@@ -60,7 +61,7 @@ class YXSearchViewController: YXBaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.searchView.name.becomeFirstResponder()
+        self.searchView.name.becomeFirstResponder()
     }
     
     override func viewDidLoad() {
@@ -104,10 +105,9 @@ class YXSearchViewController: YXBaseViewController {
         guard let keywords = self.searchView.name.text else { return }
 
         SearchMovies.execute(keywords: keywords, page: 0).then { list ->Promise<Void> in
-            
+            self.searchView.name.resignFirstResponder()
             self.dataSource.append(contentsOf: list)
             self.tableView.reloadData()
-            
             return Promise<Void>.resolve()
         }
     }

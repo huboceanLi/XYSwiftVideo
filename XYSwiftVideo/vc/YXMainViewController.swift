@@ -15,6 +15,11 @@ import SnapKit
         return view
     }()
     
+    private lazy var recodeView: YXHistoryRecodeView = {
+        let view = YXHistoryRecodeView(frame: .zero)
+        return view
+    }()
+    
     public lazy var settingButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage.xy_bundleImage(name: "yx_setting_img"), for: .normal)
@@ -40,7 +45,10 @@ import SnapKit
             guard let self = self else { return }
             let vc = YXSearchViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-            
+//            vc.clickHistoryRecordVideoBack = { [weak self] model in
+//                guard let self = self else {return}
+//                self.recodeView.getModel(model: model)
+//            }
         }
         return view
     }()
@@ -48,6 +56,8 @@ import SnapKit
     @objc private func settingAction() {
         let vc = YXHistoryViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+        
+
     }
     
     public override func viewDidLoad() {
@@ -75,6 +85,50 @@ import SnapKit
             make.left.right.bottom.equalToSuperview()
             make.top.equalTo(self.cusNaviBar.snp_bottom).offset(0)
         }
+        
+        self.view.addSubview(recodeView)
+        recodeView.snp.makeConstraints { make in
+            make.left.equalTo(self.view.snp_left).offset(0)
+            make.height.equalTo(60)
+            make.bottom.equalTo(self.view.snp_bottom).offset((YXDefine.isPhoneX() ? -120 : -80))
+        }
+        
+//        self.contentView.clickHistoryRecordVideoBack = { [weak self] model in
+//            guard let self = self else {return}
+//            self.recodeView.getModel(model: model)
+//        }
+        
+        self.recodeView.clickTapVideoBack = { [weak self] tvID in
+            guard let self = self else {return}
+            
+            let vc = YXDetailViewController()
+            vc.videoId = tvID
+            YXPagePushUtil.pushToViewController(vc: vc, isAnimated: true)
+            
+//            vc.clickHistoryRecordVideoBack = { [weak self] model in
+//                guard let self = self else {return}
+//                self.recodeView.getModel(model: model)
+//            }
+        }
+        
+        self.getHistoryFirst()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(notificaDidOpen(notifcation:)), name: Notification.Name(rawValue: "CHANGEVIDEOHISTORY"), object: nil)
+
     }
 
+    @objc private func notificaDidOpen(notifcation: Notification) {
+        self.getHistoryFirst()
+    }
+    
+    func getHistoryFirst() {
+        let hisArr = YXDefine.getHistory()
+        if hisArr.count > 0, let f = hisArr.first {
+            self.recodeView.isHidden = false
+            self.recodeView.getModel(model: f)
+        }else {
+            self.recodeView.isHidden = true
+        }
+    }
+    
 }

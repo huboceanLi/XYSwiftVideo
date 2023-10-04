@@ -9,7 +9,7 @@ import Foundation
 
 @objc extension UIImage {
     
-    static func xy_bundleImage(name: String) -> UIImage? {
+    @objc static func xy_bundleImage(name: String) -> UIImage? {
 
         if let url = Bundle.main.url(forResource: "HYVideoSDK", withExtension: "bundle"),let bundle = Bundle(url: url) {
 

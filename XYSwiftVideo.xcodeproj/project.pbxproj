@@ -32,6 +32,14 @@
 		839C85652AB95490006A54DF /* YXGatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C85642AB95490006A54DF /* YXGatherView.swift */; };
 		839C85672AB954A6006A54DF /* YXDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C85662AB954A6006A54DF /* YXDetailContentView.swift */; };
 		83E6AB0C2AAEB51900ABA9EF /* HYVideoSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 83E6AB0B2AAEB51900ABA9EF /* HYVideoSDK.bundle */; };
+		9A7B44052ACC5FC700EE5DD4 /* LHYLocaColletion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7B44032ACC5FC700EE5DD4 /* LHYLocaColletion.m */; };
+		9A7B44062ACC5FC700EE5DD4 /* LHYLocaColletion.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A7B44042ACC5FC700EE5DD4 /* LHYLocaColletion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A7B44082ACC631A00EE5DD4 /* YXHistoryRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7B44072ACC631A00EE5DD4 /* YXHistoryRecordModel.swift */; };
+		9A7B440C2ACD2E7600EE5DD4 /* YXHistoryRecodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7B440B2ACD2E7600EE5DD4 /* YXHistoryRecodeView.swift */; };
+		9A7B44122ACD710000EE5DD4 /* UITableView+EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7B44102ACD70FF00EE5DD4 /* UITableView+EmptyView.m */; };
+		9A7B44132ACD710000EE5DD4 /* UITableView+EmptyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A7B44112ACD710000EE5DD4 /* UITableView+EmptyView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A7B44162ACD9B6900EE5DD4 /* UIImage+XYSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A7B44142ACD9B6900EE5DD4 /* UIImage+XYSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A7B44172ACD9B6900EE5DD4 /* UIImage+XYSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7B44152ACD9B6900EE5DD4 /* UIImage+XYSDK.m */; };
 		9A9D555A2A9AE358001070F3 /* UIImage+YXImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D55592A9AE358001070F3 /* UIImage+YXImage.swift */; };
 		9A9D555D2A9AE45D001070F3 /* YXMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D555C2A9AE45D001070F3 /* YXMainViewController.swift */; };
 		9A9D55632A9B4B72001070F3 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D555F2A9B4B71001070F3 /* Promise.swift */; };
@@ -74,6 +82,14 @@
 		839C85642AB95490006A54DF /* YXGatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXGatherView.swift; sourceTree = "<group>"; };
 		839C85662AB954A6006A54DF /* YXDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXDetailContentView.swift; sourceTree = "<group>"; };
 		83E6AB0B2AAEB51900ABA9EF /* HYVideoSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HYVideoSDK.bundle; sourceTree = "<group>"; };
+		9A7B44032ACC5FC700EE5DD4 /* LHYLocaColletion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHYLocaColletion.m; sourceTree = "<group>"; };
+		9A7B44042ACC5FC700EE5DD4 /* LHYLocaColletion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHYLocaColletion.h; sourceTree = "<group>"; };
+		9A7B44072ACC631A00EE5DD4 /* YXHistoryRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXHistoryRecordModel.swift; sourceTree = "<group>"; };
+		9A7B440B2ACD2E7600EE5DD4 /* YXHistoryRecodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXHistoryRecodeView.swift; sourceTree = "<group>"; };
+		9A7B44102ACD70FF00EE5DD4 /* UITableView+EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+EmptyView.m"; sourceTree = "<group>"; };
+		9A7B44112ACD710000EE5DD4 /* UITableView+EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+EmptyView.h"; sourceTree = "<group>"; };
+		9A7B44142ACD9B6900EE5DD4 /* UIImage+XYSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+XYSDK.h"; sourceTree = "<group>"; };
+		9A7B44152ACD9B6900EE5DD4 /* UIImage+XYSDK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XYSDK.m"; sourceTree = "<group>"; };
 		9A9D55592A9AE358001070F3 /* UIImage+YXImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+YXImage.swift"; sourceTree = "<group>"; };
 		9A9D555C2A9AE45D001070F3 /* YXMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXMainViewController.swift; sourceTree = "<group>"; };
 		9A9D555F2A9B4B71001070F3 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
@@ -165,10 +181,14 @@
 		832552D82A9742A300BFE696 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9A7B44112ACD710000EE5DD4 /* UITableView+EmptyView.h */,
+				9A7B44102ACD70FF00EE5DD4 /* UITableView+EmptyView.m */,
 				832552EF2A975F3700BFE696 /* UIColor+YX.swift */,
 				832552DB2A9742E100BFE696 /* UIDevice+YHExtension.swift */,
 				832552D92A9742BC00BFE696 /* UIView+YHExtension.swift */,
 				9A9D55592A9AE358001070F3 /* UIImage+YXImage.swift */,
+				9A7B44142ACD9B6900EE5DD4 /* UIImage+XYSDK.h */,
+				9A7B44152ACD9B6900EE5DD4 /* UIImage+XYSDK.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -176,9 +196,12 @@
 		832552DD2A97432200BFE696 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				9A7B44042ACC5FC700EE5DD4 /* LHYLocaColletion.h */,
+				9A7B44032ACC5FC700EE5DD4 /* LHYLocaColletion.m */,
 				832552DE2A97433200BFE696 /* YXDefine.h */,
 				832552DF2A97433200BFE696 /* YXDefine.m */,
 				839174962AB17CC300401FE5 /* YXPagePushUtil.swift */,
+				9A7B44072ACC631A00EE5DD4 /* YXHistoryRecordModel.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -244,6 +267,7 @@
 				839C85552AB82CA5006A54DF /* YXMainContentView.swift */,
 				839C85522AB82C41006A54DF /* YXMainCell.swift */,
 				839C85512AB82C41006A54DF /* YXMainHeadView.swift */,
+				9A7B440B2ACD2E7600EE5DD4 /* YXHistoryRecodeView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -299,7 +323,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A9D55652A9B4B72001070F3 /* Promise.h in Headers */,
+				9A7B44062ACC5FC700EE5DD4 /* LHYLocaColletion.h in Headers */,
+				9A7B44162ACD9B6900EE5DD4 /* UIImage+XYSDK.h in Headers */,
 				832552E02A97433200BFE696 /* YXDefine.h in Headers */,
+				9A7B44132ACD710000EE5DD4 /* UITableView+EmptyView.h in Headers */,
 				832552CB2A97366700BFE696 /* XYSwiftVideo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,12 +457,16 @@
 				832552DC2A9742E100BFE696 /* UIDevice+YHExtension.swift in Sources */,
 				9A9D55662A9B4B72001070F3 /* Async.swift in Sources */,
 				839C85542AB82C41006A54DF /* YXMainCell.swift in Sources */,
+				9A7B44172ACD9B6900EE5DD4 /* UIImage+XYSDK.m in Sources */,
+				9A7B440C2ACD2E7600EE5DD4 /* YXHistoryRecodeView.swift in Sources */,
 				832552DA2A9742BC00BFE696 /* UIView+YHExtension.swift in Sources */,
 				839C85562AB82CA5006A54DF /* YXMainContentView.swift in Sources */,
 				9A9D556B2A9B4E16001070F3 /* XYNetworkingError.swift in Sources */,
 				9A9D55752A9B51FE001070F3 /* GetDetail.swift in Sources */,
+				9A7B44082ACC631A00EE5DD4 /* YXHistoryRecordModel.swift in Sources */,
 				9A9D55702A9B505E001070F3 /* YXApiService.swift in Sources */,
 				839174A02AB180FA00401FE5 /* YXSearchView.swift in Sources */,
+				9A7B44122ACD710000EE5DD4 /* UITableView+EmptyView.m in Sources */,
 				839C85672AB954A6006A54DF /* YXDetailContentView.swift in Sources */,
 				839174972AB17CC300401FE5 /* YXPagePushUtil.swift in Sources */,
 				9A9D555A2A9AE358001070F3 /* UIImage+YXImage.swift in Sources */,
@@ -448,6 +479,7 @@
 				9A9D55632A9B4B72001070F3 /* Promise.swift in Sources */,
 				9A9D55792A9B521D001070F3 /* SearchMovies.swift in Sources */,
 				839C85612AB9519B006A54DF /* YXPlayVideoView.swift in Sources */,
+				9A7B44052ACC5FC700EE5DD4 /* LHYLocaColletion.m in Sources */,
 				8391749A2AB17D6C00401FE5 /* YXDetailViewController.swift in Sources */,
 				9A9D555D2A9AE45D001070F3 /* YXMainViewController.swift in Sources */,
 			);
@@ -581,14 +613,17 @@
 			baseConfigurationReference = 376AF7998835CC95B4D6ED04 /* Pods-XYSwiftVideo.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = V6VQ8W355L;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_MASTER_OBJECT_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -615,14 +650,17 @@
 			baseConfigurationReference = 11E44C2D8AE63739802006CA /* Pods-XYSwiftVideo.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = V6VQ8W355L;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_MASTER_OBJECT_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

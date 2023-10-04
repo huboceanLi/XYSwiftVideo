@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (4.9.1)
   - HandyJSON (5.0.2)
-  - HYVideoPlay (0.1.2):
+  - HYVideoPlay (0.1.5):
     - Masonry (= 1.1.0)
     - YYModel
   - Masonry (1.1.0)
@@ -314,7 +314,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 4.9.1)
   - HandyJSON (~> 5.0.2)
-  - HYVideoPlay (~> 0.1.2)
+  - HYVideoPlay (~> 0.1.5)
   - Masonry (~> 1.1.0)
   - QMUIKit (= 4.5.1)
   - SnapKit (= 5.6.0)
@@ -338,7 +338,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
-  HYVideoPlay: c1a489c3dd9c5df31042b4023b70de4534285cdd
+  HYVideoPlay: 891fc9b3bdfeda07c4d29f41881c57c5727280fe
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   QMUIKit: 3e717c45730ecdf5011ca76751990ad1a23ba7e1
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
@@ -347,6 +347,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 2fd66eb312a9d8a7f00bff98bc4dd0879af1bc8a
+PODFILE CHECKSUM: 608066f0d39d0cba22cc57d07c24d1e70d5b03b7
 
 COCOAPODS: 1.11.3

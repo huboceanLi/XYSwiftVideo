@@ -14,7 +14,9 @@ let gatherCellHeight = 40.0
 class YXGatherView: UIView {
     
     var vodPlayUrls: [DetailVideoItemResponse] = []
-    var isMore = false
+    var currentResponse: DetailVideoItemResponse?
+
+    var clickChangeVideoBack: ((DetailVideoItemResponse) -> Void)?
 
     lazy var titleLab: UILabel = {
         let lbl: UILabel = UILabel.init(frame: .zero)
@@ -73,9 +75,9 @@ class YXGatherView: UIView {
         }
     }
 
-    func getModel(models: [DetailVideoItemResponse], isMore: Bool) {
+    func getModel(models: [DetailVideoItemResponse], currentModel: DetailVideoItemResponse?) {
+        self.currentResponse = currentModel
         self.vodPlayUrls = models
-        self.isMore = isMore
         self.collectionView.reloadData()
     }
     
@@ -99,12 +101,24 @@ extension YXGatherView: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.backgroundColor = UIColor.color8F9BAF().withAlphaComponent(0.1)
         
         cell.name.text = self.vodPlayUrls[indexPath.row].name
+        if self.currentResponse?.name == self.vodPlayUrls[indexPath.row].name {
+            cell.name.textColor = UIColor.color4F80FF()
+        }else {
+            cell.name.textColor = UIColor.color0D1324()
+        }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        
+        if self.currentResponse?.name != self.vodPlayUrls[indexPath.row].name {
+            if let closure = clickChangeVideoBack {
+                self.currentResponse = self.vodPlayUrls[indexPath.row]
+                self.collectionView.reloadData()
+                closure(self.vodPlayUrls[indexPath.row])
+            }
+        }
     }
     
 }

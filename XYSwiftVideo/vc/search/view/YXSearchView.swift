@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import QMUIKit
 
-class YXSearchView: UIView {
+class YXSearchView: UIView, QMUITextFieldDelegate {
 
     var handleSearchCallback: (() -> Void)?
 
@@ -34,7 +34,7 @@ class YXSearchView: UIView {
         name.textColor = UIColor.color0D1324().withAlphaComponent(0.4)
         name.font = UIFont.systemFont(ofSize: 14)
         name.returnKeyType = .search
-        name.text = "暗战"
+        name.delegate = self
         return name
     }()
     
@@ -75,12 +75,17 @@ class YXSearchView: UIView {
         self.handleSearchCallback?()
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.handleSearchCallback?()
+        return true
+    }
     open override func layoutSubviews() {
         super.layoutSubviews()
         
 //        self.layer.cornerRadius = self.YH_Height / 2.0
 //        self.layer.masksToBounds = true
     }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

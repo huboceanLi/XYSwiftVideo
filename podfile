@@ -15,7 +15,7 @@ target 'XYSwiftVideo' do
   pod 'YYWebImage'
   pod "Masonry", '~> 1.1.0'
   pod "YYModel"
-  pod 'HYVideoPlay', '~> 0.1.2'
+  pod 'HYVideoPlay', '~> 0.1.5'
 
   #pod 'RUSDK',:git =>"https://gitee.com/yjlhy/RUSDK.git"
 
