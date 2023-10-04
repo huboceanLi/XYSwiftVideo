@@ -31,7 +31,7 @@ class YXSearchView: UIView, QMUITextFieldDelegate {
         let name = QMUITextField()
         name.placeholder = "您想看的都在这里..."
         name.placeholderColor = UIColor.color8F9BAF()
-        name.textColor = UIColor.color0D1324().withAlphaComponent(0.4)
+        name.textColor = UIColor.color0D1324()
         name.font = UIFont.systemFont(ofSize: 14)
         name.returnKeyType = .search
         name.delegate = self
