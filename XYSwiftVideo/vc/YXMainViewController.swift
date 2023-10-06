@@ -98,27 +98,33 @@ import SnapKit
         self.recodeView.clickTapVideoBack = { [weak self] tvID in
             guard let self = self else {return}
             
-            YXTypeManager.shareInstance().showAd(with: .detail_touch) { result in
-                DispatchQueue.main.async {
-                    if result {
-                        YXDefine.saveJLADKey(true)
-                        let vc = YXDetailViewController()
-                        vc.videoId = tvID
-                        YXPagePushUtil.pushToViewController(vc: vc, isAnimated: true)
-                    }else {
-                        let alertController = UIAlertController(title: "",
-                                        message: "看完视频可以获取所有视频观看权限!", preferredStyle: .alert)
-                        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-                        let okAction = UIAlertAction(title: "确定", style: .default, handler: {
-                            action in
+            if YXDefine.getADJLKey() {
+                let vc = YXDetailViewController()
+                vc.videoId = tvID
+                YXPagePushUtil.pushToViewController(vc: vc, isAnimated: true)
+            }else {
+                let alertController = UIAlertController(title: "",
+                                message: "看完视频可以获取所有视频观看权限!", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+                let okAction = UIAlertAction(title: "确定", style: .default, handler: {
+                    action in
 
-                        })
-                        alertController.addAction(cancelAction)
-                        alertController.addAction(okAction)
-                        UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
+                    YXTypeManager.shareInstance().showAd(with: .detail_touch) { result in
+                        DispatchQueue.main.async {
+                            if result {
+                                YXDefine.saveJLADKey(true)
+                                let vc = YXDetailViewController()
+                                vc.videoId = tvID
+                                YXPagePushUtil.pushToViewController(vc: vc, isAnimated: true)
+                            }
+                        }
                     }
-                }
+                })
+                alertController.addAction(cancelAction)
+                alertController.addAction(okAction)
+                UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
             }
+
         }
         
         self.getHistoryFirst()
