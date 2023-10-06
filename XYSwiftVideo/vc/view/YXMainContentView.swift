@@ -234,9 +234,29 @@ extension YXMainContentView: UICollectionViewDelegate, UICollectionViewDataSourc
         }
         
         if let item = modelArr[indexPath.row] as? RecommendListResponse {
-            let vc = YXDetailViewController()
-            vc.videoId = item.video_id
-            YXPagePushUtil.pushToViewController(vc: vc, isAnimated: true)
+            
+            YXTypeManager.shareInstance().showAd(with: .detail_touch) { result in
+                DispatchQueue.main.async {
+                    if result {
+                        YXDefine.saveJLADKey(true)
+                        let vc = YXDetailViewController()
+                        vc.videoId = item.video_id
+                        YXPagePushUtil.pushToViewController(vc: vc, isAnimated: true)
+                    }else {
+                        let alertController = UIAlertController(title: "",
+                                        message: "看完视频可以获取所有视频观看权限!", preferredStyle: .alert)
+                        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+                        let okAction = UIAlertAction(title: "确定", style: .default, handler: {
+                            action in
+
+                        })
+                        alertController.addAction(cancelAction)
+                        alertController.addAction(okAction)
+                        UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
+                    }
+                }
+            }
+
         }
     }
 }

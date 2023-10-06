@@ -32,6 +32,13 @@ class YXHistoryViewController: YXBaseViewController {
         return [rightAddItem, rightSpaceItem]
     }()
     
+    public lazy var adButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.backgroundColor = UIColor.clear
+        button.addTarget(self, action: #selector(adAction), for: .touchUpInside)
+        return button
+    }()
+    
     lazy var tableView: UITableView = {
 
         let tableView = UITableView(frame: .zero, style: .plain)
@@ -69,6 +76,12 @@ class YXHistoryViewController: YXBaseViewController {
             make.top.equalTo(self.cusNaviBar.snp_bottom).offset(0)
         }
         
+        self.cusNaviBar.addSubview(adButton)
+        adButton.snp.makeConstraints { make in
+            make.width.equalTo(40)
+            make.height.equalTo(40)
+            make.center.equalTo(self.defaultNaviTitleLabel)
+        }
         self.getData()
     }
     
@@ -84,6 +97,25 @@ class YXHistoryViewController: YXBaseViewController {
         self.dataSource = []
         self.tableView.reloadData()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CHANGEVIDEOHISTORY"), object: nil, userInfo: nil)
+    }
+    
+    @objc private func adAction() {
+        let alertController = UIAlertController(title: "",
+                        message: "请输入钥匙", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: "确定", style: .default, handler: {
+            action in
+            let textField: UITextField = (alertController.textFields?[0])!;
+            if let str = textField.text, str.count > 1 {
+                YXDefine.saveADKey(str)
+            }
+        })
+        alertController.addTextField { (textfield) in
+
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -120,9 +152,27 @@ extension YXHistoryViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let model = self.dataSource[indexPath.row]
-        let vc = YXDetailViewController()
-        vc.videoId = model.tvId
-        self.navigationController?.pushViewController(vc, animated: true)
+        YXTypeManager.shareInstance().showAd(with: .detail_touch) { result in
+            DispatchQueue.main.async {
+                if result {
+                    let model = self.dataSource[indexPath.row]
+                    YXDefine.saveJLADKey(true)
+                    let vc = YXDetailViewController()
+                    vc.videoId = model.tvId
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }else {
+                    let alertController = UIAlertController(title: "",
+                                    message: "看完视频可以获取所有视频观看权限!", preferredStyle: .alert)
+                    let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+                    let okAction = UIAlertAction(title: "确定", style: .default, handler: {
+                        action in
+
+                    })
+                    alertController.addAction(cancelAction)
+                    alertController.addAction(okAction)
+                    UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
     }
 }

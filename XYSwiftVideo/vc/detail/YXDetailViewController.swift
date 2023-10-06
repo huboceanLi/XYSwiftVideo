@@ -148,7 +148,13 @@ class YXDetailViewController: YXBaseViewController {
                             r.url = item.playUrl
                             self.currentResponse = r
 
-                            self.playVideoView.startPlayUrl(self.currentResponse?.url ?? "", startPosition: TimeInterval(item.playDuration))
+                            YXTypeManager.shareInstance().showAd(with: .detail_play) {[weak self] result in
+                                guard let self = self else {return}
+                                DispatchQueue.main.async {
+                                    self.playVideoView.startPlayUrl(self.currentResponse?.url ?? "", startPosition: TimeInterval(item.playDuration))
+                                }
+                            }
+
 
                             break
                         }
@@ -157,12 +163,23 @@ class YXDetailViewController: YXBaseViewController {
                 }else {
                     //播放第一集
                     self.currentResponse = self.detailListResponse?.vod_play_url.first
-                    self.playVideoView.startPlayUrl(self.currentResponse?.url ?? "", startPosition: 0)
+                    
+                    YXTypeManager.shareInstance().showAd(with: .detail_play) {[weak self] result in
+                        guard let self = self else {return}
+                        DispatchQueue.main.async {
+                            self.playVideoView.startPlayUrl(self.currentResponse?.url ?? "", startPosition: 0)
+                        }
+                    }
                 }
             }else {
                 //播放第一集
                 self.currentResponse = self.detailListResponse?.vod_play_url.first
-                self.playVideoView.startPlayUrl(self.currentResponse?.url ?? "", startPosition: 0)
+                YXTypeManager.shareInstance().showAd(with: .detail_play) {[weak self] result in
+                    guard let self = self else {return}
+                    DispatchQueue.main.async {
+                        self.playVideoView.startPlayUrl(self.currentResponse?.url ?? "", startPosition: 0)
+                    }
+                }
             }
 
             self.gatherView.getModel(models: response.vod_play_url, currentModel: self.currentResponse)

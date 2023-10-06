@@ -114,9 +114,14 @@ extension YXGatherView: UICollectionViewDelegate, UICollectionViewDataSource {
         
         if self.currentResponse?.name != self.vodPlayUrls[indexPath.row].name {
             if let closure = clickChangeVideoBack {
-                self.currentResponse = self.vodPlayUrls[indexPath.row]
-                self.collectionView.reloadData()
-                closure(self.vodPlayUrls[indexPath.row])
+                
+                YXTypeManager.shareInstance().showAd(with: .detail_gather) { result in
+                    DispatchQueue.main.async {
+                        self.currentResponse = self.vodPlayUrls[indexPath.row]
+                        self.collectionView.reloadData()
+                        closure(self.vodPlayUrls[indexPath.row])
+                    }
+                }
             }
         }
     }

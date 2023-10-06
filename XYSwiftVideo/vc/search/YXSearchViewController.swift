@@ -103,9 +103,13 @@ class YXSearchViewController: YXBaseViewController {
     @objc private func searchAction() {
         
         guard let keywords = self.searchView.name.text else { return }
+        
+        self.searchView.name.resignFirstResponder()
 
+        YXTypeManager.shareInstance().showAd(with: .search) { result in
+
+        }
         SearchMovies.execute(keywords: keywords, page: 0).then { list ->Promise<Void> in
-            self.searchView.name.resignFirstResponder()
             self.dataSource.append(contentsOf: list)
             self.tableView.reloadData()
             return Promise<Void>.resolve()
@@ -164,10 +168,30 @@ extension YXSearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let model = self.dataSource[indexPath.row]
-        let vc = YXDetailViewController()
-        vc.videoId = model.id
-        self.navigationController?.pushViewController(vc, animated: true)
+        YXTypeManager.shareInstance().showAd(with: .detail_touch) { result in
+            DispatchQueue.main.async {
+                if result {
+                    YXDefine.saveJLADKey(true)
+                    let model = self.dataSource[indexPath.row]
+                    let vc = YXDetailViewController()
+                    vc.videoId = model.id
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }else {
+                    let alertController = UIAlertController(title: "",
+                                    message: "看完视频可以获取所有视频观看权限!", preferredStyle: .alert)
+                    let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+                    let okAction = UIAlertAction(title: "确定", style: .default, handler: {
+                        action in
+
+                    })
+                    alertController.addAction(cancelAction)
+                    alertController.addAction(okAction)
+                    UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+        
+
     }
 }
 

@@ -173,4 +173,33 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
     return att;
 }
 
++ (void)saveADKey:(NSString *)key
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:key forKey:@"ADKEY"];
+    [userDefaults synchronize];
+}
+
++ (BOOL)getADKey {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *key = [userDefaults stringForKey:@"ADKEY"];
+    if ([key isEqualToString:@"7235"]) {
+        return YES;
+    }
+    return NO;
+}
+
++ (void)saveJLADKey:(BOOL)key
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setBool:key forKey:@"JLAD"];
+    [userDefaults synchronize];
+}
+
++ (BOOL)getADJLKey {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    BOOL s = [userDefaults boolForKey:@"JLAD"];
+    return s;
+}
+
 @end

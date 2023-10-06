@@ -35,6 +35,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)savePlay:(YXHistoryRecordModel *)model;
 
++ (void)saveADKey:(NSString *)key;
+
++ (BOOL)getADKey;
+
+
++ (void)saveJLADKey:(BOOL)key;
+
++ (BOOL)getADJLKey;
+
 @end
 
 NS_ASSUME_NONNULL_END

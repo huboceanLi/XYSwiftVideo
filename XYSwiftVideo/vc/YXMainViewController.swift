@@ -73,6 +73,8 @@ import SnapKit
         
         self.cusNaviBar.addSubview(self.searchView)
         
+        YXDefine.saveJLADKey(false)
+        
         self.searchView.snp.makeConstraints { make in
             make.left.equalTo(self.cusNaviBar.snp_left).offset(30)
             make.bottom.equalTo(self.cusNaviBar.snp_bottom).offset(-4)
@@ -92,23 +94,31 @@ import SnapKit
             make.height.equalTo(60)
             make.bottom.equalTo(self.view.snp_bottom).offset((YXDefine.isPhoneX() ? -120 : -80))
         }
-        
-//        self.contentView.clickHistoryRecordVideoBack = { [weak self] model in
-//            guard let self = self else {return}
-//            self.recodeView.getModel(model: model)
-//        }
-        
+
         self.recodeView.clickTapVideoBack = { [weak self] tvID in
             guard let self = self else {return}
             
-            let vc = YXDetailViewController()
-            vc.videoId = tvID
-            YXPagePushUtil.pushToViewController(vc: vc, isAnimated: true)
-            
-//            vc.clickHistoryRecordVideoBack = { [weak self] model in
-//                guard let self = self else {return}
-//                self.recodeView.getModel(model: model)
-//            }
+            YXTypeManager.shareInstance().showAd(with: .detail_touch) { result in
+                DispatchQueue.main.async {
+                    if result {
+                        YXDefine.saveJLADKey(true)
+                        let vc = YXDetailViewController()
+                        vc.videoId = tvID
+                        YXPagePushUtil.pushToViewController(vc: vc, isAnimated: true)
+                    }else {
+                        let alertController = UIAlertController(title: "",
+                                        message: "看完视频可以获取所有视频观看权限!", preferredStyle: .alert)
+                        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+                        let okAction = UIAlertAction(title: "确定", style: .default, handler: {
+                            action in
+
+                        })
+                        alertController.addAction(cancelAction)
+                        alertController.addAction(okAction)
+                        UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
+                    }
+                }
+            }
         }
         
         self.getHistoryFirst()

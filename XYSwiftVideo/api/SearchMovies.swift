@@ -18,8 +18,8 @@ struct SearchMovies {
     
     static func execute(keywords: String, page: Int) -> Promise<[RecommendListResponse]> {
         
-        let request = SearchRequest(page: 1, keywords: "222")
-        let param = SearchRequest.toJSON(request)()
+//        let request = SearchRequest(page: 1, keywords: "222")
+//        let param = SearchRequest.toJSON(request)()
 
         let url = home_search + "?keywords=" + keywords + "&page=" + String(page)
 

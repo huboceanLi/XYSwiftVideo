@@ -19,6 +19,7 @@ FOUNDATION_EXPORT const unsigned char XYSwiftVideoVersionString[];
 #import <XYSwiftVideo/LHYLocaColletion.h>
 #import <XYSwiftVideo/UITableView+EmptyView.h>
 #import <XYSwiftVideo/UIImage+XYSDK.h>
+#import <XYSwiftVideo/YXTypeManager.h>
 
 //#import <XYSwiftVideo/SJVideoPlayer.h>
 //#import <XYSwiftVideo/SJAttributesFactory.h>
