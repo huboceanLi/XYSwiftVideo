@@ -51,11 +51,9 @@ class YXDetailViewController: YXBaseViewController {
     }()
     
     deinit {
-        self.playVideoView.remove()
+        print("YXDetailViewController deinit")
+//        self.playVideoView.remove()
     }
-    
-    var player: AVPlayer!
-    var playerLayer: AVPlayerLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -209,6 +207,8 @@ extension YXDetailViewController: HYVideoPlayViewDelegate {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
+        
+
         let cd = Int(self.playVideoView.currentPosition - 5)
         
         if cd > 10 {
@@ -224,6 +224,6 @@ extension YXDetailViewController: HYVideoPlayViewDelegate {
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CHANGEVIDEOHISTORY"), object: nil, userInfo: nil)
         }
-
+        self.playVideoView.remove()
     }
 }
