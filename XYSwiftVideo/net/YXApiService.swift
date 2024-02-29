@@ -5,7 +5,8 @@
 //  Created by Ocean 李 on 2023/8/27.
 //
 
-let Service_URL = "http://vod.wxspb.cn/api/movies"
+//let Service_URL = "http://vod.wxspb.cn/api/movies"
+let Service_URL = "https://vod.wxxykj.cn/api/movies"
 
 let home_recommend = Service_URL + "/recommend"
 let home_search = Service_URL + "/search_movies"
